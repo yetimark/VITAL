@@ -8481,8 +8481,8 @@ Transform:
   - {fileID: 363112666}
   - {fileID: 208286316}
   - {fileID: 219731954}
-  - {fileID: 1031810221}
   - {fileID: 990308999}
+  - {fileID: 1031810221}
   - {fileID: 903594607}
   - {fileID: 740027139}
   - {fileID: 1121843065}
@@ -11031,7 +11031,7 @@ Transform:
   m_LocalScale: {x: 14.09, y: 0.01, z: 11.4}
   m_Children: []
   m_Father: {fileID: 788426273}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1006507635
 GameObject:
@@ -11746,8 +11746,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1031810220}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5120506, y: -1.574295, z: 6.2098827}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: 1.5120544, y: -1.574295, z: 6.2098846}
+  m_LocalScale: {x: 0.40000036, y: 0.40000004, z: 0.4000004}
   m_Children:
   - {fileID: 962569871}
   - {fileID: 562010548}
@@ -11773,7 +11773,7 @@ Transform:
   - {fileID: 833243646}
   - {fileID: 1267080416}
   m_Father: {fileID: 788426273}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1031810222
 MonoBehaviour:
@@ -11786,8 +11786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5fe74742f630db43a59f93cf992e693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  supplies: {fileID: 0}
-  emptyLocations: {fileID: 0}
+  supplies: {fileID: 1031810221}
+  emptyLocations: {fileID: 397898610}
   spawnLocation: {fileID: 0}
   locations: []
 --- !u!1 &1032934638
