@@ -54,7 +54,7 @@ public class CheckListChecker : MonoBehaviour
                 if (item == GameObject.Find(thing))     //basic idea but the list index will need to be changed and cycle through up to i
                 {
                     Debug.Log("1." + this.touchCounter);
-                    this.touchCounter++;        //value not resetting locally
+                    this.touchCounter++;        //value not resetting locally #?
                     Debug.Log("2." + this.touchCounter);
                     //end this foreach
                     GameObject.Find(item.name + ".").GetComponent<Image>().enabled = true;               
@@ -91,11 +91,27 @@ public class CheckListChecker : MonoBehaviour
         {
             other.transform.position = other.GetComponent<boxReturn>().returnPosition;
             Debug.Log("Wash your hands please.");
+
+            GameObject.Find("Game UI").GetComponent<UIWarning>().WarningMessage("DryHands");
+
+
+            //turn warning sign on and put in the correct warning message
+            // GameObject warning = GameObject.FindGameObjectWithTag("Warning");
+            //  warning.SetActive(true);
+            //  warning.GetComponent<Text>().text = "YOU MUST DRY YOUR HANDS";
+            //  TurnOffObject(warning, 5f);
         }
 
     }
 
-    private void OnTriggerExit(Collider other)      
+    //should turn off an object after given time
+    private IEnumerator TurnOffObject(GameObject thing, float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        thing.SetActive(false);
+    }
+
+    private void OnTriggerExit(Collider other)      //removes items from list when they are taken off of the table
     {
         if (GameObject.Find(other.gameObject.name + ".") != null)
         {

@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 114649489253919740}
   - component: {fileID: 54550343507453960}
   - component: {fileID: 114654846107436638}
+  - component: {fileID: 65295968324377960}
   m_Layer: 0
   m_Name: Paper
-  m_TagString: Untagged
+  m_TagString: FakeTowel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,10 +98,22 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65295968324377960
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1343867782763236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.24933833, y: 0.26351643, z: 0.028358042}
+  m_Center: {x: 0.11628254, y: 2.340584, z: 0.5918045}
 --- !u!114 &114649489253919740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,10 +155,10 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1343867782763236}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c699f4155251494abe0fbd73f8a68c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   paper: {fileID: 1343867782763236}
-  startPosition: {fileID: 0}
+  once: 1

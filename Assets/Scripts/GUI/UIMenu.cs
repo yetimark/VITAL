@@ -41,14 +41,14 @@ public class UIMenu : MonoBehaviour
     public void Novice()
     {
         Debug.Log("novice");
-        GameObject.Find("Game UI").GetComponent<UIGame>().strikeDifficulty = -1;    //strikeNum
+        GameObject.Find("Game UI").GetComponent<UIGame>().strikeMax = -1;    //strikeNum
         //itemSpawn low
     }
 
     public void Competent()
     {
         Debug.Log("competent");
-        GameObject.Find("Game UI").GetComponent<UIGame>().strikeDifficulty = 3;
+        GameObject.Find("Game UI").GetComponent<UIGame>().strikeMax = 3;
         //checklist names are hidden until correct
         //item spawn med
     }
@@ -56,7 +56,7 @@ public class UIMenu : MonoBehaviour
     public void Expert()
     {
         Debug.Log("expert");
-        GameObject.Find("Game UI").GetComponent<UIGame>().strikeDifficulty = 2;
+        GameObject.Find("Game UI").GetComponent<UIGame>().strikeMax = 2;
         //no checkList visual
         //tons of extra items       item spawn high
     }

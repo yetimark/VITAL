@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class UIGame : MonoBehaviour
 {
-    public int strikeNum;
+    public int strikeNum = 0;
     public int pointNum;
     public bool good = false;
     public bool bad = false;
     public GameObject warningScript;
-    public int strikeDifficulty;
+    public int strikeMax;//for some silliness below. Should be changed to difficulty classes to cover all variable needed to be changed?
     public int itemChances;
 
     private void Awake()
@@ -23,19 +23,18 @@ public class UIGame : MonoBehaviour
         this.pointNum = 0;
         GameObject.Find("PointNum").GetComponent<Text>().text = this.pointNum.ToString();
         GameObject.Find("Strikes").GetComponent<Text>().text = this.strikeNum.ToString();
-        //this.strikeNum = some variable from difficulty
 
     }
 
-    void Update ()
+    void Update ()      //there is a better way to do this than using update        #FIXME: Responsible for adding and subtracting points. Also, takes care of strikes and some basic messages
     {
-        if (good)
+        if (this.good)
         {
             this.good = false;
             this.pointNum++;
             GameObject.Find("PointNum").GetComponent<Text>().text = this.pointNum.ToString(); 
         }
-        else if (bad)
+        else if (this.bad)
         {
             this.bad = false;
             this.pointNum--;
@@ -44,13 +43,13 @@ public class UIGame : MonoBehaviour
             this.strikeNum++;
             GameObject.Find("Strikes").GetComponent<Text>().text = strikeNum.ToString();
 
-            if (this.strikeDifficulty == -1)     //novice difficulty strike set to -1
+            if (this.strikeMax == -1)     //novice difficulty strike set to -1
             {
-                //nothing for now.. somehow get rid of strike panel?
+                //not really needed
             }
-            else if(this.strikeDifficulty >= 1)       //strikeDifficulty will be set when difficulty chosen
+            else if(this.strikeMax >= 1)       //strikeMax is be set when difficulty chosen
             {
-                if(this.strikeNum == this.strikeDifficulty)
+                if(this.strikeNum == this.strikeMax)
                 {
                     this.warningScript.GetComponent<UIWarning>().WarningMessage("GameOver");
                     Time.timeScale = 0f;
