@@ -41,28 +41,28 @@ public class Timer : MonoBehaviour
             {
                 this.display = this.minutes + ":" + this.seconds;
             }
-            
+
             if (this.minutes == 0 && this.seconds == 30)
             {
                 //while (this.soundOn == true)
                 //{
-                    if (this.difficulty == "easy")
-                    {
-                        GameObject.Find("easyMusic").GetComponent<AudioSource>().Stop();
-                        //this.soundOn = false;
-                    } //Stops easy music
-                    if (this.difficulty == "medium")
-                    {
-                        GameObject.Find("mediumMusic").GetComponent<AudioSource>().Stop();
-                        //this.soundOn = false;
-                    } //Stops medium music
-                    if (this.difficulty == "hard")
-                    {
-                        GameObject.Find("hardMusic").GetComponent<AudioSource>().Stop();
-                        //this.soundOn = false;
-                    } //Stops hard music
-                    //starting HeartBeat
-                    GameObject.Find("HeartBeat").GetComponent<AudioSource>().Play();
+                if (this.difficulty == "easy")
+                {
+                    GameObject.Find("easyMusic").GetComponent<AudioSource>().Stop();
+                    //this.soundOn = false;
+                } //Stops easy music
+                if (this.difficulty == "medium")
+                {
+                    GameObject.Find("mediumMusic").GetComponent<AudioSource>().Stop();
+                    //this.soundOn = false;
+                } //Stops medium music
+                if (this.difficulty == "hard")
+                {
+                    GameObject.Find("hardMusic").GetComponent<AudioSource>().Stop();
+                    //this.soundOn = false;
+                } //Stops hard music
+                  //starting HeartBeat
+                GameObject.Find("HeartBeat").GetComponent<AudioSource>().Play();
                 //}
             }
             else if (this.minutes == 0 && this.seconds < 30)
@@ -77,7 +77,7 @@ public class Timer : MonoBehaviour
                 //startingflatline
                 GameObject.Find("Flatline").GetComponent<AudioSource>().Play();
             }
-            else //this.seconds >= 31
+            else //(this.seconds >= 31)
             {
                 //while (this.soundOn == false)
                 //{
