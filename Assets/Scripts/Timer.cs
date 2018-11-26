@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     public int minutes = 0;
     public int seconds = -1;
     public string difficulty = "null";
-    private bool soundOn = false; //tells if music is currently playing
+    //private bool soundOn = false; //tells if music is currently playing
     private string convertedTime; //change this value before runtime
     private string display;
 
@@ -24,12 +24,12 @@ public class Timer : MonoBehaviour
 
     public IEnumerator CountdownStart(float minutes, float seconds)
     {
-        if (this.soundOn == true)
-        {
+        //if (this.soundOn == true)
+        //{
             GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
-            this.soundOn = false;
+            //this.soundOn = false;
             Debug.Log("Lobby sound is off");
-        }
+        //}
 
         while (this.seconds > -1)
         {
@@ -41,49 +41,29 @@ public class Timer : MonoBehaviour
             {
                 this.display = this.minutes + ":" + this.seconds;
             }
-            if (this.seconds >= 31)
+            
+            if (this.minutes == 0 && this.seconds == 30)
             {
-                while (this.soundOn == false)
-                {
-                    if (this.difficulty == "easy")
-                    {
-                        GameObject.Find("easyMusic").GetComponent<AudioSource>().Play();
-                        this.soundOn = true;
-                    } //Starts easy music
-                    if (this.difficulty == "medium")
-                    {
-                        GameObject.Find("mediumMusic").GetComponent<AudioSource>().Play();
-                        this.soundOn = true;
-                    } //Starts medium music
-                    if (this.difficulty == "hard")
-                    {
-                        GameObject.Find("hardMusic").GetComponent<AudioSource>().Play();
-                        this.soundOn = true;
-                    } //Starts hard music
-                }
-            }
-            else if (this.minutes == 0 && this.seconds == 30)
-            {
-                while (this.soundOn == true)
-                {
+                //while (this.soundOn == true)
+                //{
                     if (this.difficulty == "easy")
                     {
                         GameObject.Find("easyMusic").GetComponent<AudioSource>().Stop();
-                        this.soundOn = false;
+                        //this.soundOn = false;
                     } //Stops easy music
                     if (this.difficulty == "medium")
                     {
                         GameObject.Find("mediumMusic").GetComponent<AudioSource>().Stop();
-                        this.soundOn = false;
+                        //this.soundOn = false;
                     } //Stops medium music
                     if (this.difficulty == "hard")
                     {
                         GameObject.Find("hardMusic").GetComponent<AudioSource>().Stop();
-                        this.soundOn = false;
+                        //this.soundOn = false;
                     } //Stops hard music
                     //starting HeartBeat
                     GameObject.Find("HeartBeat").GetComponent<AudioSource>().Play();
-                }
+                //}
             }
             else if (this.minutes == 0 && this.seconds < 30)
             {
@@ -97,6 +77,28 @@ public class Timer : MonoBehaviour
                 //startingflatline
                 GameObject.Find("Flatline").GetComponent<AudioSource>().Play();
             }
+            else //this.seconds >= 31
+            {
+                //while (this.soundOn == false)
+                //{
+                if (this.difficulty == "easy")
+                {
+                    GameObject.Find("easyMusic").GetComponent<AudioSource>().Play();
+                    //this.soundOn = true;
+                } //Starts easy music
+                if (this.difficulty == "medium")
+                {
+                    GameObject.Find("mediumMusic").GetComponent<AudioSource>().Play();
+                    //this.soundOn = true;
+                } //Starts medium music
+                if (this.difficulty == "hard")
+                {
+                    GameObject.Find("hardMusic").GetComponent<AudioSource>().Play();
+                    //this.soundOn = true;
+                } //Starts hard music
+                //}
+            }
+           
             yield return new WaitForSeconds(1.0f);
             if (this.seconds == 0)
             {
