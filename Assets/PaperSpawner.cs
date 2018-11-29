@@ -14,7 +14,7 @@ public class PaperSpawner : MonoBehaviour
 
 	void Awake ()
     {
-        this.paperTransform = GameObject.FindGameObjectWithTag("PaperTowel").transform;
+        //this.paperTransform = GameObject.FindGameObjectWithTag("PaperTowel").transform;
         this.paperSpawn = this.gameObject.transform;
         this.fakePaper = GameObject.Find("FakePaper");
 	}

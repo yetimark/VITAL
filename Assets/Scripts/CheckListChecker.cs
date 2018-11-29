@@ -9,7 +9,7 @@ public class CheckListChecker : MonoBehaviour
     public bool door = false;       //needs to be true then false after entering room
     public GameObject listPanel;
     public bool panelOn = true;
-    public GameObject Party = GameObject.FindGameObjectWithTag("Party");
+    public GameObject Party;
 
     private List<string> onTheTable = new List<string>();
     private int touchCounter = 0;
@@ -24,6 +24,7 @@ public class CheckListChecker : MonoBehaviour
 
     void Awake ()
     {
+        Party = GameObject.FindGameObjectWithTag("Party");
         Party.GetComponent<ParticleSystem>().Pause();
         this.listPanel = GameObject.Find("CheckListPanel");
 
