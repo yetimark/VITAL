@@ -26,13 +26,6 @@ public class Timer : MonoBehaviour
 
     public IEnumerator CountdownStart(float minutes, float seconds)
     {
-        //if (this.soundOn == true)
-        //{
-            GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
-            //this.soundOn = false;
-            Debug.Log("Lobby sound is off");
-        //}
-
         while (this.seconds > -1)
         {
             if (this.seconds <= 9)

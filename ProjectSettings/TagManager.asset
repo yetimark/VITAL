@@ -15,6 +15,7 @@ TagManager:
   - Warning
   - Strikes
   - Party
+  - lobbyMusic
   layers:
   - Default
   - TransparentFX

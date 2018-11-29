@@ -10,6 +10,7 @@ public class Buttons : MonoBehaviour {
 
     public void Awake()
     {
+        Debug.Log("lobbyMusic");
         GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Play();
         this.gameUI = GameObject.Find("Game UI");
     }

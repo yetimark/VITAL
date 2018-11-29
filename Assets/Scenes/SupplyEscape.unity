@@ -1969,7 +1969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 129225046}
   - component: {fileID: 129225047}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: lobbyMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
