@@ -15,6 +15,7 @@ public class CheckListChecker : MonoBehaviour
     private int i = 0;
 
     //for requiring handwashing before item placement on table
+    //being used as Singletons and gates at line 82
     public bool handsWashed = false;
     public bool handsDried = false;
     //private bool handsRinsed = false;
@@ -79,7 +80,9 @@ public class CheckListChecker : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //if(this.handsSoaped && this.handsRinsed && this.handsDried)
-        if (this.handsDried && this.handsDried)
+        //then player is code side allowed to place objects on the table\
+        //#FixMe: Add a warning when placing things on table without doing the sink things
+        if (this.handsDried && this.handsWashed)
         {
             Debug.Log(other.name);
             this.onTheTable.Add(other.name);

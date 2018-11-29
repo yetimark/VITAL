@@ -10,7 +10,7 @@ public class PaperSpawner : MonoBehaviour
     private Transform paperSpawn;
     private Transform paperTransform;
     public bool once = true;
-    public bool only = true;
+    public bool only = false;
 
 	void Awake ()
     {
@@ -35,17 +35,15 @@ public class PaperSpawner : MonoBehaviour
     void Update ()//FIXME# runs immediately
     {
         //if it has been moved, turn gravity on and spawn a new instance of the prefab as well as disabling the if block
-		if(this.paperSpawn.position != this.paperTransform.position && this.once)
+        if (only)
         {
-            Debug.Log("Paper has been Torn");
-            this.once = false;
+            this.only = false;
             this.paperTransform.GetComponent<Rigidbody>().useGravity = true;
             this.paperTransform.GetComponent<Rigidbody>().isKinematic = false;
             this.fakePaper.SetActive(true);
-            //Instantiate(this.paper, this.paperSpawn);
-
-            //this directly changes a variable in required to place objects on the table
             GameObject.FindGameObjectWithTag("Table").GetComponent<CheckListChecker>().handsDried = true;
+            Debug.Log("Paper has been torn");
         }
-	}
+
+    }
 }

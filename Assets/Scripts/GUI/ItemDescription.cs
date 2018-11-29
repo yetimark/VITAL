@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemName : MonoBehaviour
+public class ItemDescription : MonoBehaviour
 {
     private GameObject currentItem = null;
-    private string displayText;
+    private string displayMessage;
 
 
-	void Awake ()
+    void Awake()
     {
-        this.displayText = this.gameObject.GetComponent<Text>().text;
-	}
+       this.displayMessage = this.gameObject.GetComponent<Text>().text;
+    }
 
-	void Update ()
+    void Update()
     {
         GameObject currObject = GameObject.Find("OculusGoController").GetComponent<ControllerInteraction>().currObject;
 
-        if(currObject != null)
+        if (currObject != null)
         {
-            this.displayText = this.currentItem.name;
+            this.displayMessage = this.currentItem.name;
         }
         else
         {
-            this.displayText = "";
+            this.displayMessage = "";
         }
-	}
+    }
 }
