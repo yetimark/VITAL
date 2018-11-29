@@ -26,6 +26,9 @@ namespace EasyInputVR.Misc
         public Text leftTriggerValue;
         public Text rightTriggerValue;
 
+        //my selfmade variables
+        public bool left;
+        public bool right;
 
         bool touching;
         bool longTouching;
@@ -123,6 +126,9 @@ namespace EasyInputVR.Misc
             {
                 leftTriggerValue.text = "Pushed";
                 leftTrigger = false;
+
+                //my addtition
+                left = false;
             }
 
             if (!rightTrigger)
@@ -131,6 +137,9 @@ namespace EasyInputVR.Misc
             {
                 rightTriggerValue.text = "Pushed";
                 rightTrigger = false;
+
+                //my addition
+                right = false;
             }
 
         }
@@ -248,6 +257,9 @@ namespace EasyInputVR.Misc
             if (axis.axisValue.x > .05f || axis.axisValue.y > .05f || axis.axisValue.x < -.05f || axis.axisValue.y < -.05f)
             {
                 leftTrigger = true;
+
+                //my addition
+                left = true;
             }
         }
 
@@ -256,6 +268,9 @@ namespace EasyInputVR.Misc
             if (axis.axisValue.x > .05f || axis.axisValue.y > .05f || axis.axisValue.x < -.05f || axis.axisValue.y < -.05f)
             {
                 rightTrigger = true;
+
+                //my addition
+                right = true;
             }
         }
 

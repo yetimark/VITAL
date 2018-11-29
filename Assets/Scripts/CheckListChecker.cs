@@ -18,7 +18,7 @@ public class CheckListChecker : MonoBehaviour
     //for requiring handwashing before item placement on table
     //being used as Singletons and gates at line 82
     public bool handsWashed = false;
-    public bool handsDried = false;
+    public bool handsDried = true;                                               //#FIXME: should be false
 
     //private bool handsRinsed = false;
 
@@ -35,6 +35,7 @@ public class CheckListChecker : MonoBehaviour
     void Start()
     {
         this.listPanel.SetActive(this.panelOn);     //change true or false depending upon simulation difficulty
+        GameObject.Find("WashedHands").GetComponent<Image>().enabled = false;
 
         if (this.panelOn)       //should be activated on button press for difficulty 
         {
@@ -87,6 +88,9 @@ public class CheckListChecker : MonoBehaviour
         //#FixMe: Add a warning when placing things on table without doing the sink things
         if (this.handsDried && this.handsWashed)
         {
+            //green for washed hands
+            GameObject.Find("WashedHands").GetComponent<Image>().enabled = true;
+
             Debug.Log(other.name);
             this.onTheTable.Add(other.name);
             this.i++;

@@ -2,15 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoapScript : MonoBehaviour {
-    public GameObject handWashStation;
-
-	// Use this for initialization
-	void Awake () {
-		
-	}
-
-    // Update is called once per frame
+public class SoapScript : MonoBehaviour
+{
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")

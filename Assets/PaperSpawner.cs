@@ -9,7 +9,7 @@ public class PaperSpawner : MonoBehaviour
 
     private Transform paperSpawn;
     private Transform paperTransform;
-    public bool once = true;
+    //public bool once = true;
     public bool only = false;
 
 	void Awake ()

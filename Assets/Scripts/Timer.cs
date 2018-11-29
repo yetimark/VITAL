@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
     //private bool soundOn = false; //tells if music is currently playing
     private string convertedTime; //change this value before runtime
     private string display;
+    public bool soundOn = false;
+
 
     void Start ()
     {
@@ -77,26 +79,26 @@ public class Timer : MonoBehaviour
                 //startingflatline
                 GameObject.Find("Flatline").GetComponent<AudioSource>().Play();
             }
-            else //(this.seconds >= 31)
+            else if (this.seconds >= 31 && this.minutes >= 0)
             {
-                //while (this.soundOn == false)
-                //{
+                while (this.soundOn == false)
+                {
                 if (this.difficulty == "easy")
                 {
                     GameObject.Find("easyMusic").GetComponent<AudioSource>().Play();
-                    //this.soundOn = true;
+                    this.soundOn = true;
                 } //Starts easy music
                 if (this.difficulty == "medium")
                 {
                     GameObject.Find("mediumMusic").GetComponent<AudioSource>().Play();
-                    //this.soundOn = true;
+                    this.soundOn = true;
                 } //Starts medium music
                 if (this.difficulty == "hard")
                 {
                     GameObject.Find("hardMusic").GetComponent<AudioSource>().Play();
-                    //this.soundOn = true;
+                    this.soundOn = true;
                 } //Starts hard music
-                //}
+                }
             }
            
             yield return new WaitForSeconds(1.0f);

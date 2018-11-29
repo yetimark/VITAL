@@ -19,9 +19,12 @@ public class Buttons : MonoBehaviour {
         GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
         new WaitForSeconds(0.5f);
 
+        GameObject.Find("easyMusic").GetComponent<AudioSource>().Play();
+
         newTime.minutes = 3;
         newTime.seconds = 0;
         newTime.difficulty = "easy";
+        //newTime.soundOn = true;
 
         this.player.transform.position = this.spawn.transform.position;
         this.player.transform.rotation = spawn.transform.rotation;
@@ -40,8 +43,12 @@ public class Buttons : MonoBehaviour {
         newTime.minutes = 1;
         newTime.seconds = 30;
         newTime.difficulty = "medium";
+        //newTime.soundOn = true;
+        
+        GameObject.Find("mediumMusic").GetComponent<AudioSource>().Play();
 
         this.player.transform.position = this.spawn.transform.position;
+        this.player.transform.rotation = spawn.transform.rotation;
 
         this.gameUI.GetComponent<UIGame>().strikeMax = 4;
     }
@@ -53,8 +60,12 @@ public class Buttons : MonoBehaviour {
         newTime.minutes = 1;
         newTime.seconds = 0;
         newTime.difficulty = "hard";
+        //newTime.soundOn = true;
 
+        GameObject.Find("hardMusic").GetComponent<AudioSource>().Play();
+        
         this.player.transform.position = this.spawn.transform.position;
+        this.player.transform.rotation = spawn.transform.rotation;
 
         this.gameUI.GetComponent<UIGame>().strikeMax = 1;
     }
