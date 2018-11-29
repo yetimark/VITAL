@@ -9,19 +9,22 @@ public class CheckListChecker : MonoBehaviour
     public bool door = false;       //needs to be true then false after entering room
     public GameObject listPanel;
     public bool panelOn = true;
+    public GameObject Party = GameObject.FindGameObjectWithTag("Party");
 
     private List<string> onTheTable = new List<string>();
     private int touchCounter = 0;
-    private int i = 0;
+    private int i = 0;    
 
     //for requiring handwashing before item placement on table
     //being used as Singletons and gates at line 82
     public bool handsWashed = false;
     public bool handsDried = false;
+
     //private bool handsRinsed = false;
 
     void Awake ()
     {
+        Party.GetComponent<ParticleSystem>().Pause();
         this.listPanel = GameObject.Find("CheckListPanel");
 
         this.dressingChange = new GameObject[] {GameObject.Find("Dressing Change Kit"), GameObject.Find("Face Mask for Patient"),
@@ -89,6 +92,12 @@ public class CheckListChecker : MonoBehaviour
             this.i++;
 
             this.door = CheckList(this.dressingChange);
+            if (this.door)
+            {
+                //Activates partyMachine
+                Party.GetComponent<AudioSource>().Play();
+                Party.GetComponent<ParticleSystem>().Play();
+            }
         }
         else        //warning prompt for washing hands and return object to starting position
         {
