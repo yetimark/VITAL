@@ -13,7 +13,8 @@ public class CheckListChecker : MonoBehaviour
 
     private List<string> onTheTable = new List<string>();
     private int touchCounter = 0;
-    private int i = 0;    
+    private bool washedOnce = false;
+    //private int i = 0;    
 
     //for requiring handwashing before item placement on table
     //being used as Singletons and gates at line 82
@@ -63,7 +64,13 @@ public class CheckListChecker : MonoBehaviour
                     this.touchCounter++;        //value not resetting locally #?
                     Debug.Log("2." + this.touchCounter);
                     //end this foreach
-                    GameObject.Find(item.name + ".").GetComponent<Image>().enabled = true;               
+                    GameObject.Find(item.name + ".").GetComponent<Image>().enabled = true;
+                    GameObject.Find("Game UI").GetComponent<UIGame>().good = true;
+                }
+                else
+                {
+                    //this might make values really low
+                    GameObject.Find("Game UI").GetComponent<UIGame>().bad = true;
                 }
             }
         }
@@ -90,11 +97,16 @@ public class CheckListChecker : MonoBehaviour
         if (this.handsDried && this.handsWashed)
         {
             //green for washed hands
-            GameObject.Find("WashedHands").GetComponent<Image>().enabled = true;
+            if(this.washedOnce)
+            {
+                this.washedOnce = false;
+                GameObject.Find("WashedHands").GetComponent<Image>().enabled = true;
+                GameObject.Find("Game UI").GetComponent<UIGame>().good = true;
+            }
 
             Debug.Log(other.name);
             this.onTheTable.Add(other.name);
-            this.i++;
+            //this.i++;
 
             this.door = CheckList(this.dressingChange);
             if (this.door)
@@ -110,6 +122,7 @@ public class CheckListChecker : MonoBehaviour
             Debug.Log("Make sure to wash and dry your hands!");
 
             GameObject.Find("Game UI").GetComponent<UIWarning>().WarningMessage("DryHands");
+            GameObject.Find("Game UI").GetComponent<UIGame>().bad = true;
 
 
             //turn warning sign on and put in the correct warning message

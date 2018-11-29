@@ -9,28 +9,28 @@ public class ControllerInteraction : MonoBehaviour
 
         //this is the object being pointed at (only for interactable items)
     public GameObject currObject;
-    public bool oneObject = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Supplies")
+        if(this.currObject == null)
         {
-            this.currObject = other.gameObject;
-            this.oneObject = true;
+            if (other.tag == "Supplies")
+            {
+                this.currObject = other.gameObject;
+            }
+            else if (other.tag == "PaperTowel")
+            {
+                GameObject.Find("Paper").GetComponent<PaperSpawner>().only = true;
+            }
         }
-        else if (other.tag == "PaperTowel")
-        {
-            GameObject.Find("Paper").GetComponent<PaperSpawner>().only = true;
-            this.oneObject = true;
-        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Supplies" || other.tag == "PaperTowel")
+        if(this.currObject != null && (other.tag == "Supplies" || other.tag == "PaperTowel"))
         {
             this.currObject = null;
-            this.oneObject = false;
 
         }
     }
