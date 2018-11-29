@@ -29,12 +29,9 @@ public class PaperSpawner : MonoBehaviour
         {
             Debug.Log("Paper is Falling");
 //            Debug.Log("Paper Has Been Torn");
-
         }
 
     }
-
-
     void Update ()//FIXME# runs immediately
     {
         //if it has been moved, turn gravity on and spawn a new instance of the prefab as well as disabling the if block

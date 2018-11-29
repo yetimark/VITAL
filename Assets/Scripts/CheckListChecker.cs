@@ -15,11 +15,11 @@ public class CheckListChecker : MonoBehaviour
     private int i = 0;
 
     //for requiring handwashing before item placement on table
+    public bool handsWashed = false;
     public bool handsDried = false;
-    private bool handsSoaped = false;
-    private bool handsRinsed = false;
+    //private bool handsRinsed = false;
 
-	void Awake ()
+    void Awake ()
     {
         this.listPanel = GameObject.Find("CheckListPanel");
 
@@ -79,7 +79,7 @@ public class CheckListChecker : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //if(this.handsSoaped && this.handsRinsed && this.handsDried)
-        if(this.handsDried)
+        if (this.handsDried && this.handsDried)
         {
             Debug.Log(other.name);
             this.onTheTable.Add(other.name);
@@ -90,7 +90,7 @@ public class CheckListChecker : MonoBehaviour
         else        //warning prompt for washing hands and return object to starting position
         {
             other.transform.position = other.GetComponent<boxReturn>().returnPosition;
-            Debug.Log("Wash your hands please.");
+            Debug.Log("Make sure to wash and dry your hands!");
 
             GameObject.Find("Game UI").GetComponent<UIWarning>().WarningMessage("DryHands");
 
