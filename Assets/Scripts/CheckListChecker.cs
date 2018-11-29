@@ -94,7 +94,7 @@ public class CheckListChecker : MonoBehaviour
         //if(this.handsSoaped && this.handsRinsed && this.handsDried)
         //then player is code side allowed to place objects on the table\
         //#FixMe: Add a warning when placing things on table without doing the sink things
-        if (this.handsWashed)
+        if (this.handsWashed && other.tag != "Player")
         {
             Debug.Log("1");
             //green for washed hands

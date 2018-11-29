@@ -14,9 +14,11 @@ public class ControllerInteraction : MonoBehaviour
     {
         if(this.currObject == null)
         {
+
             if (other.tag == "Supplies")
             {
                 this.currObject = other.gameObject;
+
             }
             else if (other.tag == "PaperTowel")
             {

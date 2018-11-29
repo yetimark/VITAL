@@ -4,26 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemName : MonoBehaviour
-{
-    private string displayText;
-    
-
-	void Awake ()
-    {
-        this.displayText = "";
-	}
-
+{    
 	void Update ()
     {
         GameObject currObject = GameObject.Find("OculusGoController").GetComponent<ControllerInteraction>().currObject;
 
-        if(currObject != null)
+        if (currObject != null)
         {
-            this.displayText = currObject.name;
+            this.gameObject.GetComponent<Text>().text = currObject.name;
+            Debug.Log("we have an objection sir!");
+
         }
         else
         {
-            this.displayText = "";
+            this.gameObject.GetComponent<Text>().text = "";
         }
 	}
 }

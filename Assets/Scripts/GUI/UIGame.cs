@@ -20,6 +20,7 @@ public class UIGame : MonoBehaviour
 
     private void Start()
     {
+
         this.pointNum = 0;
         GameObject.Find("PointNum").GetComponent<Text>().text = this.pointNum.ToString();
         GameObject.Find("Strikes").GetComponent<Text>().text = this.strikeNum.ToString();

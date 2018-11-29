@@ -6,13 +6,6 @@ using UnityEngine.UI;
 public class ItemDescription : MonoBehaviour
 {
     private GameObject currentItem = null;
-    private string displayMessage;
-
-
-    void Awake()
-    {
-       this.displayMessage = "";
-    }
 
     void Update()
     {
@@ -20,11 +13,11 @@ public class ItemDescription : MonoBehaviour
 
         if (currObject != null)
         {
-            this.displayMessage = currObject.GetComponent<Text>().text;
+            this.gameObject.GetComponent<Text>().text = currObject.GetComponent<Text>().text;
         }
         else
         {
-            this.displayMessage = "";
+            this.gameObject.GetComponent<Text>().text = "";
         }
     }
 }
