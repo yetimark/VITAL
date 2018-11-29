@@ -11,7 +11,7 @@ public class ItemDescription : MonoBehaviour
 
     void Awake()
     {
-       this.displayMessage = this.gameObject.GetComponent<Text>().text;
+       this.displayMessage = "";
     }
 
     void Update()

@@ -19697,7 +19697,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: e0f1914fdbfd3764faeff5474c0cbe1e, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f1914fdbfd3764faeff5474c0cbe1e, type: 3}
@@ -19775,6 +19775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currObject: {fileID: 0}
+  oneObject: 0
 --- !u!65 &1492938254
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class ItemName : MonoBehaviour
 {
     private string displayText;
-
+    
 
 	void Awake ()
     {
-        this.displayText = this.gameObject.GetComponent<Text>().text;
+        this.displayText = "";
 	}
 
 	void Update ()
