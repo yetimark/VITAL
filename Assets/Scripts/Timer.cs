@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
 
     void Start ()
     {
-        //StartCoroutine(CountdownStart(this.minutes, this.seconds));
+        StartCoroutine(CountdownStart(this.minutes, this.seconds));
     }
 
     void Update ()
@@ -26,21 +26,6 @@ public class Timer : MonoBehaviour
 
     public IEnumerator CountdownStart(float minutes, float seconds)
     {
-        if (this.difficulty == "easy")
-        {
-            this.minutes = 3;
-            this.seconds = 0;
-        }
-        else if (this.difficulty == "medium")
-        {
-            this.minutes = 1;
-            this.seconds = 30;
-        }
-        else
-        {
-            this.minutes = 1;
-            this.seconds = 0;
-        }
         while (this.seconds > -1)
         {
             if (this.seconds <= 9 && this.seconds != -1)

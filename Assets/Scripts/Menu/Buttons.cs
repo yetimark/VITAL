@@ -21,14 +21,14 @@ public class Buttons : MonoBehaviour {
         new WaitForSeconds(0.5f);
 
         Debug.Log("EasyMusicButtons");
-        //newTime.minutes = 3;
-        //newTime.seconds = 0;
+        newTime.minutes = 3;
+        newTime.seconds = 0;
         newTime.difficulty = "easy";
         //newTime.soundOn = true;
 
         this.player.transform.position = this.spawn.transform.position;
         this.player.transform.rotation = spawn.transform.rotation;
-        StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(3, 0));
+        //StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(3, 0));
 
         //set to number of max strikes
         //   this.gameUI.GetComponent<UIGame>().strikeMax = -1;
@@ -41,8 +41,8 @@ public class Buttons : MonoBehaviour {
         GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
         new WaitForSeconds(0.5f);
 
-        //newTime.minutes = 1;
-        //newTime.seconds = 30;
+        newTime.minutes = 1;
+        newTime.seconds = 30;
         newTime.difficulty = "medium";
         //newTime.soundOn = true;
 
@@ -50,7 +50,7 @@ public class Buttons : MonoBehaviour {
 
         this.player.transform.position = this.spawn.transform.position;
         this.player.transform.rotation = spawn.transform.rotation;
-        StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(1, 30));
+        //StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(1, 30));
 
         this.gameUI.GetComponent<UIGame>().strikeMax = 4;
     }
@@ -62,8 +62,8 @@ public class Buttons : MonoBehaviour {
             GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
             new WaitForSeconds(0.5f);
 
-            //newTime.minutes = 1;
-            //newTime.seconds = 0;
+            newTime.minutes = 1;
+            newTime.seconds = 0;
             newTime.difficulty = "hard";
             //newTime.soundOn = true;
 
@@ -71,7 +71,7 @@ public class Buttons : MonoBehaviour {
 
             this.player.transform.position = this.spawn.transform.position;
             this.player.transform.rotation = spawn.transform.rotation;
-            StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(1, 0));
+            //StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(1, 0));
 
             this.gameUI.GetComponent<UIGame>().strikeMax = 2;
         //}
