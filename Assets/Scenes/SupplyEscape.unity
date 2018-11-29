@@ -11684,8 +11684,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minutes: 0
-  seconds: -1
-  difficulty: null
+  seconds: 35
+  difficulty: easy
   soundOn: 0
 --- !u!23 &977487396
 MeshRenderer:
