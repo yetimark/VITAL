@@ -25,6 +25,7 @@ public class SoapScript : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
+            
             this.waterStream.SetActive(false);
         }
     }

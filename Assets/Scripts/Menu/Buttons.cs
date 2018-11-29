@@ -20,7 +20,6 @@ public class Buttons : MonoBehaviour {
         GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
         new WaitForSeconds(0.5f);
 
-        GameObject.Find("easyMusic").GetComponent<AudioSource>().Play();
         Debug.Log("EasyMusicButtons");
         newTime.minutes = 3;
         newTime.seconds = 0;

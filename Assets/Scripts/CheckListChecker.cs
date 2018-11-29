@@ -13,7 +13,7 @@ public class CheckListChecker : MonoBehaviour
 
     private List<string> onTheTable = new List<string>();
     private int touchCounter = 0;
-    private bool washedOnce = false;
+    private bool washedOnce = true;
     //private int i = 0;    
 
     //for requiring handwashing before item placement on table
@@ -94,11 +94,13 @@ public class CheckListChecker : MonoBehaviour
         //if(this.handsSoaped && this.handsRinsed && this.handsDried)
         //then player is code side allowed to place objects on the table\
         //#FixMe: Add a warning when placing things on table without doing the sink things
-        if (this.handsDried && this.handsWashed)
+        if (this.handsWashed)
         {
+            Debug.Log("1");
             //green for washed hands
             if(this.washedOnce)
             {
+                Debug.Log("2");
                 this.washedOnce = false;
                 GameObject.Find("WashedHands").GetComponent<Image>().enabled = true;
                 GameObject.Find("Game UI").GetComponent<UIGame>().good = true;

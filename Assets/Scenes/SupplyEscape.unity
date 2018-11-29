@@ -11687,7 +11687,6 @@ MonoBehaviour:
   seconds: -1
   difficulty: null
   soundOn: 0
-  fella: 0
 --- !u!23 &977487396
 MeshRenderer:
   m_ObjectHideFlags: 0

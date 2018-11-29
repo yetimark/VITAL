@@ -21,15 +21,16 @@ public class Timer : MonoBehaviour
     void Update ()
     {
         GameObject.Find("ClockText").GetComponent<Text>().text = this.display;
+        Debug.Log(this.display);
 	}
 
     public IEnumerator CountdownStart(float minutes, float seconds)
     {
         while (this.seconds > -1)
         {
-            if (this.seconds <= 9)
+            if (this.seconds <= 9 && this.seconds != -1)
             {
-                this.display = minutes + ":0" + seconds;
+                this.display = this.minutes + ":0" + this.seconds;
             }
             else
             {
