@@ -21,7 +21,7 @@ public class PaperSpawner : MonoBehaviour
 
     private void Start()
     {
-        this.fakePaper.SetActive(false);
+        this.fakePaper.SetActive(true);     //set to false normally
     }
     private void OnTriggerExit(Collider other)
     {

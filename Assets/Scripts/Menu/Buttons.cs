@@ -67,6 +67,6 @@ public class Buttons : MonoBehaviour {
         this.player.transform.position = this.spawn.transform.position;
         this.player.transform.rotation = spawn.transform.rotation;
 
-        this.gameUI.GetComponent<UIGame>().strikeMax = 1;
+        this.gameUI.GetComponent<UIGame>().strikeMax = 2;
     }
 }

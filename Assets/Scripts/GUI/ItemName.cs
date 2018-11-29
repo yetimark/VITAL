@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ItemName : MonoBehaviour
 {
-    private GameObject currentItem = null;
     private string displayText;
 
 
@@ -20,7 +19,7 @@ public class ItemName : MonoBehaviour
 
         if(currObject != null)
         {
-            this.displayText = this.currentItem.name;
+            this.displayText = currObject.name;
         }
         else
         {

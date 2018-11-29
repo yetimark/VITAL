@@ -20,7 +20,7 @@ public class ItemDescription : MonoBehaviour
 
         if (currObject != null)
         {
-            this.displayMessage = this.currentItem.name;
+            this.displayMessage = currObject.GetComponent<Text>().text;
         }
         else
         {
