@@ -21,7 +21,7 @@ public class Buttons : MonoBehaviour {
         new WaitForSeconds(0.5f);
 
         GameObject.Find("easyMusic").GetComponent<AudioSource>().Play();
-
+        Debug.Log("EasyMusicButtons");
         newTime.minutes = 3;
         newTime.seconds = 0;
         newTime.difficulty = "easy";
@@ -45,7 +45,7 @@ public class Buttons : MonoBehaviour {
         newTime.seconds = 30;
         newTime.difficulty = "medium";
         //newTime.soundOn = true;
-        
+
         GameObject.Find("mediumMusic").GetComponent<AudioSource>().Play();
 
         this.player.transform.position = this.spawn.transform.position;

@@ -11684,9 +11684,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minutes: 0
-  seconds: 35
-  difficulty: easy
+  seconds: -1
+  difficulty: null
   soundOn: 0
+  fella: 0
 --- !u!23 &977487396
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19775,7 +19776,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currObject: {fileID: 0}
-  oneObject: 0
 --- !u!65 &1492938254
 BoxCollider:
   m_ObjectHideFlags: 0
