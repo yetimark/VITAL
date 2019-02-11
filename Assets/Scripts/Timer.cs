@@ -63,7 +63,6 @@ public class Timer : MonoBehaviour
             else if (this.minutes == 0 && this.seconds < 30)
             {
                 //play HeartBeat
-
                 GameObject.Find("HeartBeat").GetComponent<AudioSource>().Play();
             }
             else if (this.minutes == 0 && this.seconds == 0)
@@ -79,16 +78,15 @@ public class Timer : MonoBehaviour
                 {
                 if (this.difficulty == "easy")
                 {
-                    Debug.Log("EasyMusic1");
                     GameObject.Find("easyMusic").GetComponent<AudioSource>().Play();
                     this.soundOn = true;
                 } //Starts easy music
-                if (this.difficulty == "medium")
+                else if (this.difficulty == "medium")
                 {
                     GameObject.Find("mediumMusic").GetComponent<AudioSource>().Play();
                     this.soundOn = true;
                 } //Starts medium music
-                if (this.difficulty == "hard")
+                else if (this.difficulty == "hard")
                 {
                     GameObject.Find("hardMusic").GetComponent<AudioSource>().Play();
                     this.soundOn = true;
