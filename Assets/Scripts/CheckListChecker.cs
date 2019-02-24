@@ -66,11 +66,19 @@ public class CheckListChecker : MonoBehaviour
                     //end this foreach
                     GameObject.Find(item.name + ".").GetComponent<Image>().enabled = true;
                     GameObject.Find("Game UI").GetComponent<UIGame>().good = true;
+                    //GameObject.Find("Game UI").GetComponent<UIGame>().pointNum += 50; //NEEDS TO HAVE POINTS ADDED @SixtyGig
                 }
                 else
                 {
                     //this might make values really low
                     GameObject.Find("Game UI").GetComponent<UIGame>().bad = true;
+
+
+                    //GameObject.Find("Game UI").GetComponent<UIGame>().strikeNum += 1;
+                    //if (GameObject.Find("Game UI").GetComponent<UIGame>().strikeNum == GameObject.Find("Game UI").GetComponent<UIGame>().strikeMax)
+                    //{
+                    //    //GAMEOVER @SixtyGig
+                    //}
                 }
             }
         }
