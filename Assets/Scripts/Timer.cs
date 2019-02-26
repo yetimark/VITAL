@@ -21,9 +21,9 @@ public class Timer : MonoBehaviour
     void Update ()
     {
         GameObject.Find("ClockText").GetComponent<Text>().text = this.display;
-        Debug.Log(this.minutes);
-        Debug.Log(this.seconds);
-        Debug.Log(this.display);
+        //Debug.Log(this.minutes);
+        //Debug.Log(this.seconds);          //commented for performance by Blaine 
+        //Debug.Log(this.display);
         
 	}
 

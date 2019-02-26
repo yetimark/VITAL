@@ -65,13 +65,15 @@ public class CheckListChecker : MonoBehaviour
                     Debug.Log("2." + this.touchCounter);
                     //end this foreach
                     GameObject.Find(item.name + ".").GetComponent<Image>().enabled = true;
-                    GameObject.Find("Game UI").GetComponent<UIGame>().good = true;
+
+                    //Strikes and points taken care of in following method
+                    GameObject.Find("Game UI").GetComponent<UIGame>().GoodAction();
                     //GameObject.Find("Game UI").GetComponent<UIGame>().pointNum += 50; //NEEDS TO HAVE POINTS ADDED @SixtyGig
                 }
                 else
                 {
-                    //this might make values really low
-                    GameObject.Find("Game UI").GetComponent<UIGame>().bad = true;
+                    //Strikes and points taken care of in following method
+                    GameObject.Find("Game UI").GetComponent<UIGame>().BadAction();
 
 
                     //GameObject.Find("Game UI").GetComponent<UIGame>().strikeNum += 1;
@@ -111,7 +113,9 @@ public class CheckListChecker : MonoBehaviour
                 Debug.Log("2");
                 this.washedOnce = false;
                 GameObject.Find("WashedHands").GetComponent<Image>().enabled = true;
-                GameObject.Find("Game UI").GetComponent<UIGame>().good = true;
+
+                //Strikes and points taken care of in following method
+                GameObject.Find("Game UI").GetComponent<UIGame>().GoodAction();
             }
 
             Debug.Log(other.name);
@@ -133,7 +137,9 @@ public class CheckListChecker : MonoBehaviour
             Debug.Log("Make sure to wash and dry your hands!");
 
             GameObject.Find("Game UI").GetComponent<UIWarning>().WarningMessage("DryHands");
-            GameObject.Find("Game UI").GetComponent<UIGame>().bad = true;
+
+            //Strikes and points taken care of in following method
+            GameObject.Find("Game UI").GetComponent<UIGame>().BadAction();
             
 
             //turn warning sign on and put in the correct warning message

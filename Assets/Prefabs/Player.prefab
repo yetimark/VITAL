@@ -2459,10 +2459,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ff6da077d2b5549a0e81467b691ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strikeNum: 0
-  pointNum: 0
-  good: 0
-  bad: 0
   warningScript: {fileID: 0}
   strikeMax: 0
   itemChances: 0
