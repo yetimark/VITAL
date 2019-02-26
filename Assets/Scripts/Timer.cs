@@ -5,26 +5,29 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public int minutes = 0;
-    public int seconds = -1;
-    public string difficulty = "null";
-    //private bool soundOn = false; //tells if music is currently playing
+    public int minutes;
+    public int seconds;
+    public string difficulty;
+
     private string convertedTime; //change this value before runtime
     private string display;
     public bool soundOn = false;
 
     void Start ()
     {
-        StartCoroutine(CountdownStart(this.minutes, this.seconds));
+        StartCoroutine(CountdownStart(this.minutes, this.seconds, this.difficulty));
     }
 
     void Update ()
     {
         GameObject.Find("ClockText").GetComponent<Text>().text = this.display;
+        Debug.Log(this.minutes);
+        Debug.Log(this.seconds);
         Debug.Log(this.display);
+        
 	}
 
-    public IEnumerator CountdownStart(float minutes, float seconds)
+    public IEnumerator CountdownStart(float minutes, float seconds, string difficulty)
     {
         while (this.seconds > -1)
         {
@@ -56,13 +59,6 @@ public class Timer : MonoBehaviour
                 //play HeartBeat
                 GameObject.Find("HeartBeat").GetComponent<AudioSource>().Play();
             }
-            else if (this.minutes == 0 && this.seconds == 0)
-            {
-                //stopping HeartBeat
-                GameObject.Find("HeartBeat").GetComponent<AudioSource>().Stop();
-                //startingflatline
-                GameObject.Find("Flatline").GetComponent<AudioSource>().Play();
-            }
             else if (this.seconds >= 31 && this.minutes >= 0)
             {
                 while (this.soundOn == false)
@@ -84,7 +80,14 @@ public class Timer : MonoBehaviour
                 } //Starts hard music
                 }
             }
-           
+            if (this.minutes == 0 && this.seconds == 0)
+            {
+                //stopping HeartBeat
+                GameObject.Find("HeartBeat").GetComponent<AudioSource>().Stop();
+                //startingflatline
+                GameObject.Find("Flatline").GetComponent<AudioSource>().Play();
+            }
+
             yield return new WaitForSeconds(1.0f);
             if (this.seconds == 0)
             {

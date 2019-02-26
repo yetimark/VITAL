@@ -15,7 +15,7 @@ public class SceneLoadManager : MonoBehaviour
     //calls the main scene we have been working on
     public void LoadEscapeRoom()
     {
-        SceneManager.LoadScene("SupplyEscape");
+        SceneManager.LoadScene("StartSelection");
     }
 	
     void MakeSingleton()

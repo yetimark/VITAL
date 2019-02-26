@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DifficultyButtons : MonoBehaviour
 {
-    Timer newTime = new Timer(); 
     public GameObject player;
     public GameObject spawn;
     private GameObject gameUI;
@@ -21,10 +20,10 @@ public class DifficultyButtons : MonoBehaviour
         GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
         new WaitForSeconds(0.5f);
 
-        Debug.Log("EasyMusicButtons");
-        newTime.minutes = 3;
-        newTime.seconds = 0;
-        newTime.difficulty = "easy";
+        Debug.Log("EasyButton");
+        StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(GameObject.Find("Timer").GetComponent<Timer>().minutes = 3,
+                                                                                     GameObject.Find("Timer").GetComponent<Timer>().seconds = 0,
+                                                                                     GameObject.Find("Timer").GetComponent<Timer>().difficulty = "easy"));
 
         this.player.transform.position = this.spawn.transform.position;
         this.player.transform.rotation = spawn.transform.rotation;
@@ -35,38 +34,32 @@ public class DifficultyButtons : MonoBehaviour
         GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
         new WaitForSeconds(0.5f);
 
-        newTime.minutes = 1;
-        newTime.seconds = 30;
-        newTime.difficulty = "medium";
-
+        Debug.Log("MediumButton");
+        
         GameObject.Find("mediumMusic").GetComponent<AudioSource>().Play();
 
         this.player.transform.position = this.spawn.transform.position;
         this.player.transform.rotation = spawn.transform.rotation;
-        //StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(1, 30));
+        StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(GameObject.Find("Timer").GetComponent<Timer>().minutes = 1, 
+                                                                                     GameObject.Find("Timer").GetComponent<Timer>().seconds = 30, 
+                                                                                     GameObject.Find("Timer").GetComponent<Timer>().difficulty = "medium"));
 
         this.gameUI.GetComponent<UIGame>().strikeMax = 4;
     }
     public void HardButton()
-    //public void OnTriggerEnter(Collider other)
     {
-        //if (other == GameObject.FindGameObjectWithTag("Player"))
-        //{
             GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
             new WaitForSeconds(0.5f);
 
-            newTime.minutes = 1;
-            newTime.seconds = 0;
-            newTime.difficulty = "hard";
-            //newTime.soundOn = true;
+            Debug.Log("HardButton");
+        StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(GameObject.Find("Timer").GetComponent<Timer>().minutes = 1,
+                                                                                     GameObject.Find("Timer").GetComponent<Timer>().seconds = 0,
+                                                                                     GameObject.Find("Timer").GetComponent<Timer>().difficulty = "hard"));
+        GameObject.Find("hardMusic").GetComponent<AudioSource>().Play();
 
-            GameObject.Find("hardMusic").GetComponent<AudioSource>().Play();
+        this.player.transform.position = this.spawn.transform.position;
+        this.player.transform.rotation = spawn.transform.rotation;
 
-            this.player.transform.position = this.spawn.transform.position;
-            this.player.transform.rotation = spawn.transform.rotation;
-            //StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(1, 0));
-
-            this.gameUI.GetComponent<UIGame>().strikeMax = 2;
-        //}
+        this.gameUI.GetComponent<UIGame>().strikeMax = 2;
     }
 }

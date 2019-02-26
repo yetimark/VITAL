@@ -106,7 +106,7 @@ public class CheckListChecker : MonoBehaviour
         {
             Debug.Log("1");
             //green for washed hands
-            if(this.washedOnce)
+            if (this.washedOnce)
             {
                 Debug.Log("2");
                 this.washedOnce = false;
@@ -129,11 +129,12 @@ public class CheckListChecker : MonoBehaviour
         else        //warning prompt for washing hands and return object to starting position
         {
             other.transform.position = other.GetComponent<boxReturn>().returnPosition;
+            
             Debug.Log("Make sure to wash and dry your hands!");
 
             GameObject.Find("Game UI").GetComponent<UIWarning>().WarningMessage("DryHands");
             GameObject.Find("Game UI").GetComponent<UIGame>().bad = true;
-
+            
 
             //turn warning sign on and put in the correct warning message
             // GameObject warning = GameObject.FindGameObjectWithTag("Warning");
