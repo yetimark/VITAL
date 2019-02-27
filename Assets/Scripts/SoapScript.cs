@@ -16,8 +16,10 @@ public class SoapScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Hands have been washed");
-            GameObject.FindGameObjectWithTag("Table").GetComponent<CheckListChecker>().handsWashed = true;
+            //GameObject.FindGameObjectWithTag("Table").GetComponent<CheckListChecker>().handsWashed = true;
+            GameObject.FindGameObjectWithTag("Table").GetComponent<TableChecker>().handsWashed = true;
             this.waterStream.SetActive(true);
+
         }
     }
 

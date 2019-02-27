@@ -20,7 +20,7 @@ public class TableChecker : MonoBehaviour
     //for requiring handwashing before item placement on table
     //being used as Singletons and gates at line 82
     public bool handsWashed = false;
-    public bool handsDried = true;                                               //#FIXME: should be false
+    //public bool handsDried = true;                                               //#FIXME: should be false?
 
     //private bool handsRinsed = false;
 
@@ -109,7 +109,7 @@ public class TableChecker : MonoBehaviour
             if (this.handsWashed)
             {
                 Debug.Log("1");
-                //green for washed hands
+                //green for washed hands            //seperate method for other checks like handwashing
                 if (this.washedOnce)
                 {
                     Debug.Log("2");
@@ -142,7 +142,7 @@ public class TableChecker : MonoBehaviour
                 GameObject.Find("Game UI").GetComponent<UIWarning>().WarningMessage("DryHands");
 
                 //Strikes and points taken care of in following method
-                GameObject.Find("Game UI").GetComponent<UIGame>().BadAction();
+            //    GameObject.Find("Game UI").GetComponent<UIGame>().BadAction();
             }
         }
     }
