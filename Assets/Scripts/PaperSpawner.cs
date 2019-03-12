@@ -41,7 +41,7 @@ public class PaperSpawner : MonoBehaviour
             this.paperTransform.GetComponent<Rigidbody>().useGravity = true;
             this.paperTransform.GetComponent<Rigidbody>().isKinematic = false;
             this.fakePaper.SetActive(true);
-            GameObject.FindGameObjectWithTag("Table").GetComponent<CheckListChecker>().handsDried = true;
+            //GameObject.FindGameObjectWithTag("Table").GetComponent<TableChecker>().handsDried = true;
             Debug.Log("Paper has been torn");
         }
 

@@ -29,12 +29,16 @@ public class UIGame : MonoBehaviour
     public void GoodAction()
     {
         this.pointNum++;
+        Debug.Log("POINT" + pointNum);
+
         GameObject.Find("PointNum").GetComponent<Text>().text = this.pointNum.ToString();
     }
 
     public void BadAction()
     {
         this.strikeNum++;
+        Debug.Log("STRIKE" + strikeNum);
+
         GameObject.Find("Strikes").GetComponent<Text>().text = strikeNum.ToString();
 
         if (this.strikeNum == this.strikeMax)

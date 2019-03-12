@@ -6,43 +6,41 @@ using UnityEngine.Audio;
 public class DoorMover : MonoBehaviour
 {
     public float speed = 1f;
-    
-    private bool go = false;
-    private bool once = true;
-    
+
+    private bool once = false;
+
 
     public Transform startRotation;
     public Transform targetRotation;
 
-
-    void ObjectLerp()
+    private void Start()
     {
-        this.gameObject.transform.rotation = 
+        //this.once = false;
+    }
+
+    private void ObjectLerp()
+    {
+        this.gameObject.transform.rotation =
             Quaternion.Lerp(this.startRotation.rotation, this.targetRotation.rotation, Time.deltaTime * this.speed);
     }
 
-    void PlaySound()
+    private void PlaySound()
     {
-        if (this.go)
-        {
-            this.once = false;
-            this.gameObject.GetComponent<AudioSource>().Play();
-        }
+        this.gameObject.GetComponent<AudioSource>().Play();
     }
 
-
-    private void Update()       //use this
+    public void OpenDoor()
     {
-        this.go = GameObject.FindGameObjectWithTag("Table").GetComponent<CheckListChecker>().door;
+        this.once = true;
+        PlaySound();
+    }
 
-        if (this.go)        //activate this.go in on table competion
+    public void Update()
+    {
+        if (this.gameObject.transform.rotation != this.targetRotation.rotation && this.once)
         {
-            if (this.gameObject.transform.rotation != this.targetRotation.rotation)
-            {
-                ObjectLerp();
-                PlaySound();
-                Debug.Log("it happened");
-            }
+            ObjectLerp();
+            Debug.Log("Door is Opening");
         }
     }
 }

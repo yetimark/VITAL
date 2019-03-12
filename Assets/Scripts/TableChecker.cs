@@ -10,7 +10,6 @@ public class TableChecker : MonoBehaviour
     private Dictionary<string, bool> piccLine = new Dictionary<string, bool>();
     private int truthCounter;
 
-    public bool door = false;       //needs to be true then false after entering room
     public GameObject listPanel;
     public bool panelOn = true;
     public GameObject Party;
@@ -75,12 +74,15 @@ public class TableChecker : MonoBehaviour
             {
                 this.piccLine[objectName] = true;
                 this.truthCounter++;
+                Debug.Log("truthCounter" + truthCounter);
 
                 GameObject.Find("Game UI").GetComponent<UIGame>().GoodAction();
             }
             else
             {
                 GameObject.Find("Game UI").GetComponent<UIGame>().BadAction();
+                //return object to shelf
+                GameObject.Find(objectName).GetComponent<boxReturn>().ReturnHome();
             }   
         }
 
@@ -94,6 +96,7 @@ public class TableChecker : MonoBehaviour
             {
                 this.piccLine[objectName] = false;
                 this.truthCounter--;
+                Debug.Log("truthCounter" + truthCounter);
             }
         }
     }
@@ -110,22 +113,17 @@ public class TableChecker : MonoBehaviour
             {
                 Debug.Log("1");
                 //green for washed hands            //seperate method for other checks like handwashing
-                if (this.washedOnce)
-                {
-                    Debug.Log("2");
-                    this.washedOnce = false;
-                    GameObject.Find("WashedHands").GetComponent<Image>().enabled = true;
-
-                    //Strikes and points taken care of in following method
-                    GameObject.Find("Game UI").GetComponent<UIGame>().GoodAction();
-                }
+                
 
                 Debug.Log(other.name);
                 NewToTable(other.name);
+                
+                //turn unique checkbox on
+                GameObject.Find(other.gameObject.name + ".").GetComponent<Image>().enabled = true; 
 
                 if (this.truthCounter == this.piccLine.Count)
                 {
-                    this.door = true;
+                    GameObject.Find("NewDoor").GetComponent<DoorMover>().OpenDoor();
                     //Activates partyMachine
                     Party.GetComponent<AudioSource>().Play();
                     Party.GetComponent<ParticleSystem>().Play();
@@ -135,7 +133,7 @@ public class TableChecker : MonoBehaviour
             else        //warning prompt for washing hands and return object to starting position
             {
                 //      #FIXME:     Perhaps have the object display it was wrong, wait, and them move
-                other.transform.position = other.GetComponent<boxReturn>().returnPosition;
+                other.GetComponent<boxReturn>().ReturnHome();
 
                 Debug.Log("Make sure to wash and dry your hands!");
 
@@ -162,7 +160,6 @@ public class TableChecker : MonoBehaviour
         {
             GameObject.Find(other.gameObject.name + ".").GetComponent<Image>().enabled = false; //turn off check box
             RemoveFromTable(other.name);
-            this.truthCounter--;
         }
     }
 }

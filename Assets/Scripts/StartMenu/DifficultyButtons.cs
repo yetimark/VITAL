@@ -15,6 +15,12 @@ public class DifficultyButtons : MonoBehaviour
         this.gameUI = GameObject.Find("Game UI");
     }
 
+    //for testing only
+    public void Start()
+    {
+        EasyButton();
+    }
+
     public void EasyButton()
     {
         GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
