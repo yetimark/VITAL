@@ -20,11 +20,7 @@ public class Timer : MonoBehaviour
 
     void Update ()
     {
-        GameObject.Find("ClockText").GetComponent<Text>().text = this.display;
-        //Debug.Log(this.minutes);
-        //Debug.Log(this.seconds);          //commented for performance by Blaine 
-        //Debug.Log(this.display);
-        
+        GameObject.Find("ClockText").GetComponent<Text>().text = this.display;    
 	}
 
     public IEnumerator CountdownStart(float minutes, float seconds, string difficulty)
