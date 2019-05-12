@@ -8,6 +8,7 @@ public class DifficultyButtons : MonoBehaviour
     public GameObject spawn;
     private GameObject gameUI;
 
+
     public void Awake()
     {
         Debug.Log("lobbyMusic");
@@ -15,10 +16,9 @@ public class DifficultyButtons : MonoBehaviour
         this.gameUI = GameObject.Find("Game UI");
     }
 
-    //for testing only
     public void Start()
     {
-        EasyButton();
+
     }
 
     public void EasyButton()

@@ -12,34 +12,32 @@ public class SoapScript : MonoBehaviour
     {
         this.waterStream.SetActive(false);
     }
+    
 
-    private void OnTriggerEnter(Collider other)
+    public void FaucetButtonPressDown()
     {
-        if (other.gameObject.tag == "Player")
+        
+        Debug.Log("Hands have been washed");
+        //GameObject.FindGameObjectWithTag("Table").GetComponent<CheckListChecker>().handsWashed = true;
+        GameObject.FindGameObjectWithTag("Table").GetComponent<TableChecker>().handsWashed = true;
+        this.waterStream.SetActive(true);
+
+        if (this.washedOnce)
         {
-            Debug.Log("Hands have been washed");
-            //GameObject.FindGameObjectWithTag("Table").GetComponent<CheckListChecker>().handsWashed = true;
-            GameObject.FindGameObjectWithTag("Table").GetComponent<TableChecker>().handsWashed = true;
-            this.waterStream.SetActive(true);
+            Debug.Log("2");
+            this.washedOnce = false;
+            GameObject.Find("WashedHands").GetComponent<Image>().enabled = true;
 
-            if (this.washedOnce)
-            {
-                Debug.Log("2");
-                this.washedOnce = false;
-                GameObject.Find("WashedHands").GetComponent<Image>().enabled = true;
-
-                //Strikes and points taken care of in following method
-                GameObject.Find("Game UI").GetComponent<UIGame>().GoodAction();
-            }
+            //Strikes and points taken care of in following method
+            GameObject.Find("Game UI").GetComponent<UIGame>().GoodAction();
         }
+        
     }
 
-    private void OnTriggerExit(Collider other)
+    public void FaucetButtonPressUp()
     {
-        if(other.gameObject.tag == "Player")
-        {
-            
-            this.waterStream.SetActive(false);
-        }
+        this.waterStream.SetActive(false);
     }
+
+    
 }
