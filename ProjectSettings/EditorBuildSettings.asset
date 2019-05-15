@@ -9,21 +9,12 @@ EditorBuildSettings:
     path: Assets/SteamVR/InteractionSystem/Samples/Interactions_Example.unity
     guid: e3b77830391f10343929883b18f4d5ae
   - enabled: 1
-    path: Assets/Scenes/SteamVR Build.unity
-    guid: 2e60b9aa910a99f48908a2c509ca3b20
-  - enabled: 1
     path: Assets/Scenes/StartSelection.unity
     guid: cfb0beaa010cdc148870cd4320181c73
   - enabled: 0
+    path: Assets/Scenes/SteamVR Build.unity
+    guid: 2e60b9aa910a99f48908a2c509ca3b20
+  - enabled: 0
     path: Assets/Scenes/SupplyEscape.unity
     guid: b76e3080026605e4b932d62658dca79f
-  - enabled: 0
-    path: Assets/Scenes/MenuScene.unity
-    guid: 652fe37a2d6eb7e4ab9e0871802208e7
-  - enabled: 0
-    path: Assets/Scenes/Unused/VRHold.unity
-    guid: 1550d9cccc8c58645b41353036beafd9
-  - enabled: 0
-    path: Assets/Scenes/Unused/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
