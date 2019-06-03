@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class TableChecker : MonoBehaviour
 {
-    //dictionary of objects needed for skill as keyword with a bool to stating if it is on the table already or not
+    // Dictionary of objects needed for skill as keyword with a bool to stating if it is on the table already or not
     private Dictionary<string, bool> piccLine = new Dictionary<string, bool>();
     private int truthCounter;
 
@@ -14,14 +15,9 @@ public class TableChecker : MonoBehaviour
     public bool panelOn = true;
     public GameObject Party;
 
-    private bool washedOnce = true;
+    private bool washedOnce = true; // For requiring handwashing before item placement on table
 
-    //for requiring handwashing before item placement on table
-    //being used as Singletons and gates at line 82
     public bool handsWashed = false;
-    //public bool handsDried = true;                                               //#FIXME: should be false?
-
-    //private bool handsRinsed = false;
 
     void Awake()
     {
@@ -32,7 +28,7 @@ public class TableChecker : MonoBehaviour
         AddObjectsToPiccLine();
     }
 
-    //adds all of the objects needed for Picc Line Skill
+    // Adds all of the objects needed for Picc Line Skill
     private void AddObjectsToPiccLine()
     {
         this.piccLine.Add("Dressing Change Kit", false);
@@ -50,15 +46,14 @@ public class TableChecker : MonoBehaviour
 
     void Start()
     {
-        this.listPanel.SetActive(this.panelOn);     //change true or false depending upon simulation difficulty
+        this.listPanel.SetActive(this.panelOn); // Change true or false depending upon simulation difficulty
         GameObject.Find("WashedHands").GetComponent<Image>().enabled = false;
 
-        if (this.panelOn)       //should be activated on button press for difficulty 
+        if (this.panelOn) // Should be activated on button press for difficulty 
         {
 
             foreach (string itemName in this.piccLine.Keys)      //#FIXME:    piccLine should change upon skill selection
             {
-                //Debug.Log(item);
                 GameObject.Find(itemName + ".").GetComponent<Image>().enabled = false;
             }
         }
@@ -70,7 +65,7 @@ public class TableChecker : MonoBehaviour
         {
             //checks objects on table, updates appropriately,               FIXME:??    and delivers strikes and points.
           
-            if (this.piccLine.ContainsKey(objectName) && this.piccLine[objectName] == false)        //if key is not in dictionary, will it be false for part two if it was the only one?
+            if (this.piccLine.ContainsKey(objectName) && this.piccLine[objectName] == false) // If key is not in dictionary, will it be false for part two if it was the only one?
             {
                 this.piccLine[objectName] = true;
                 this.truthCounter++;
@@ -111,15 +106,12 @@ public class TableChecker : MonoBehaviour
         {
             if (this.handsWashed)
             {
-                Debug.Log("1");
-                //green for washed hands            //seperate method for other checks like handwashing
-                
+                // Checkbox is green for washed hands            
 
                 Debug.Log(other.name);
                 NewToTable(other.name);
                 
-                //turn unique checkbox on
-                GameObject.Find(other.gameObject.name + ".").GetComponent<Image>().enabled = true; 
+                GameObject.Find(other.gameObject.name + ".").GetComponent<Image>().enabled = true; // Turn unique checkbox on
 
                 if (this.truthCounter == this.piccLine.Count)
                 {
@@ -130,7 +122,7 @@ public class TableChecker : MonoBehaviour
                 }
 
             }
-            else        //warning prompt for washing hands and return object to starting position
+            else // Warning prompt for washing hands and return object to starting position
             {
                 //      #FIXME:     Perhaps have the object display it was wrong, wait, and them move
                 other.GetComponent<boxReturn>().ReturnHome();
@@ -140,7 +132,6 @@ public class TableChecker : MonoBehaviour
                 GameObject.Find("Game UI").GetComponent<UIWarning>().WarningMessage("DryHands");
 
                 //Strikes and points taken care of in following method
-            //    GameObject.Find("Game UI").GetComponent<UIGame>().BadAction();
             }
         }
     }
