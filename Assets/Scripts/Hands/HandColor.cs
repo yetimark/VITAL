@@ -4,16 +4,8 @@ using UnityEngine;
 
 public class HandColor : MonoBehaviour
 {
-    private Color32 handColor; //RGB values of the color. Flesh color is: [##, ##, ##].
-    // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Renderer>().material.color = handColor;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        this.GetComponent<Renderer>().material.color = new Color32(255, 203, 164, 0); // RGB values of the color. Flesh color is: [255, 203, 164].
     }
 }
