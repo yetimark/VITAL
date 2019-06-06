@@ -25,11 +25,11 @@ public class TableChecker : MonoBehaviour
         Party.GetComponent<ParticleSystem>().Pause();
         this.listPanel = GameObject.Find("CheckListPanel");
 
-        AddObjectsToPiccLine();
+        CreateSupplyList_PiccLine();
     }
 
     // Adds all of the objects needed for Picc Line Skill
-    private void AddObjectsToPiccLine()
+    private void CreateSupplyList_PiccLine()
     {
         this.piccLine.Add("Dressing Change Kit", false);
         this.piccLine.Add("Face Mask for Patient", false);
