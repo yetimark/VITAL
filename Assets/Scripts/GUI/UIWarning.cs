@@ -41,7 +41,7 @@ public class UIWarning : MonoBehaviour
     IEnumerator CloseAfterWarning(float sec)
     {
         yield return new WaitForSeconds(sec);
-        GameObject.FindGameObjectWithTag("Warning").SetActive(false);
+        //GameObject.FindGameObjectWithTag("Warning").SetActive(false);
     }
 
 	void Update ()

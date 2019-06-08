@@ -11,7 +11,7 @@ public class TableChecker : MonoBehaviour
     private Dictionary<string, bool> piccLine = new Dictionary<string, bool>();
     private int truthCounter;
 
-    public GameObject listPanel;
+    public GameObject checklistPanel;
     public bool panelOn = true;
     public GameObject Party;
 
@@ -23,7 +23,7 @@ public class TableChecker : MonoBehaviour
     {
         Party = GameObject.FindGameObjectWithTag("Party");
         Party.GetComponent<ParticleSystem>().Pause();
-        this.listPanel = GameObject.Find("CheckListPanel");
+        this.checklistPanel = GameObject.Find("CheckListPanel");
 
         CreateSupplyList_PiccLine();
     }
@@ -46,7 +46,7 @@ public class TableChecker : MonoBehaviour
 
     void Start()
     {
-        this.listPanel.SetActive(this.panelOn); // Change true or false depending upon simulation difficulty
+        this.checklistPanel.SetActive(this.panelOn); // Change true or false depending upon simulation difficulty
         GameObject.Find("WashedHands").GetComponent<Image>().enabled = false;
 
         if (this.panelOn) // Should be activated on button press for difficulty 
