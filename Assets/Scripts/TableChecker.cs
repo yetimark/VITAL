@@ -17,8 +17,18 @@ public class TableChecker : MonoBehaviour
 
     private bool washedOnce = true; // For requiring handwashing before item placement on table
 
-    public bool handsWashed = false;
+    public bool handsRinsed = false;
+    public bool handsDried = false;
+    public bool handsSoaped = false;
+    private bool sinkSteps = false;
 
+    private void Update()
+    {
+        if (this.handsSoaped && this.handsRinsed && this.handsSoaped)
+        {
+            this.sinkSteps = true;
+        }
+    }
     void Awake()
     {
         Party = GameObject.FindGameObjectWithTag("Party");
@@ -47,11 +57,10 @@ public class TableChecker : MonoBehaviour
     void Start()
     {
         this.checklistPanel.SetActive(this.panelOn); // Change true or false depending upon simulation difficulty
-        GameObject.Find("WashedHands").GetComponent<Image>().enabled = false;
+        GameObject.Find("SinkSteps").GetComponent<Image>().enabled = false;
 
         if (this.panelOn) // Should be activated on button press for difficulty 
         {
-
             foreach (string itemName in this.piccLine.Keys)      //#FIXME:    piccLine should change upon skill selection
             {
                 GameObject.Find(itemName + ".").GetComponent<Image>().enabled = false;
@@ -76,8 +85,7 @@ public class TableChecker : MonoBehaviour
             else
             {
                 GameObject.Find("Game UI").GetComponent<UIGame>().BadAction();
-                //return object to shelf
-                GameObject.Find(objectName).GetComponent<boxReturn>().ReturnHome();
+                GameObject.Find(objectName).GetComponent<boxReturn>().ReturnHome(); // return object to shelf
             }   
         }
 
@@ -102,15 +110,15 @@ public class TableChecker : MonoBehaviour
         //if(this.handsSoaped && this.handsRinsed && this.handsDried)
         //then player is code side allowed to place objects on the table\
         //#FixMe: Add a warning when placing things on table without doing the sink things
-        if(other.tag != "Player")
+        if (other.tag != "Player")
         {
-            if (this.handsWashed)
+            if (this.sinkSteps)
             {
                 // Checkbox is green for washed hands            
 
                 Debug.Log(other.name);
                 NewToTable(other.name);
-                
+
                 GameObject.Find(other.gameObject.name + ".").GetComponent<Image>().enabled = true; // Turn unique checkbox on
 
                 if (this.truthCounter == this.piccLine.Count)
@@ -119,6 +127,7 @@ public class TableChecker : MonoBehaviour
                     //Activates partyMachine
                     Party.GetComponent<AudioSource>().Play();
                     Party.GetComponent<ParticleSystem>().Play();
+                    //GameObject.Find("TeleportToScoreRoom");
                 }
 
             }

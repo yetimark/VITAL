@@ -6,6 +6,6 @@ public class handWashChecker : MonoBehaviour
 {
     public void OnTriggerEnter(Collider other)
     {
-        GameObject.Find("Table").GetComponent<TableChecker>().handsWashed = true;
+        GameObject.Find("TableSensor").GetComponent<TableChecker>().handsRinsed = true;
     }
 }
