@@ -26795,7 +26795,7 @@ MeshRenderer:
   m_GameObject: {fileID: 782673958}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -31448,7 +31448,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2b02ad6a247e4964e988f536dd60d4e3, type: 2}
+  - {fileID: 2100000, guid: b5598187c84c8b0479cd37440e0dddc7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -32881,7 +32881,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.027, y: 0.482}
+  m_AnchoredPosition: {x: 0.027, y: 0.41}
   m_SizeDelta: {x: 498.38004, y: 249.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &999927431
@@ -41573,7 +41573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.007000029, y: 0.000002682209}
+  m_AnchoredPosition: {x: 0.007000029, y: -0.132}
   m_SizeDelta: {x: 498, y: 249}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1249295050
@@ -55908,7 +55908,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605284266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.124}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0223}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5489755711874849724}
@@ -55970,7 +55970,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1e-45, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: -0.0000000014944748, z: 6.92e-43, w: -0.000000001475664}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -77278,7 +77278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5489755711875156236}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -5.3899994, y: 4.421, z: 5.42}
+  m_LocalPosition: {x: -5.3899994, y: 4.24, z: 5.42}
   m_LocalScale: {x: 10, y: 10, z: 7.692311}
   m_Children:
   - {fileID: 1605284267}
