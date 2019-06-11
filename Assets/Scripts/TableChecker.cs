@@ -24,7 +24,7 @@ public class TableChecker : MonoBehaviour
 
     private void Update()
     {
-        if (this.handsSoaped && this.handsRinsed && this.handsSoaped)
+        if (this.handsRinsed && this.handsDried && this.handsSoaped)
         {
             this.sinkSteps = true;
         }
@@ -72,7 +72,7 @@ public class TableChecker : MonoBehaviour
     {
         if(GameObject.Find(objectName).tag != "Player")
         {
-            //checks objects on table, updates appropriately,               FIXME:??    and delivers strikes and points.
+            //checks objects on table, updates appropriately
           
             if (this.piccLine.ContainsKey(objectName) && this.piccLine[objectName] == false) // If key is not in dictionary, will it be false for part two if it was the only one?
             {
@@ -88,14 +88,13 @@ public class TableChecker : MonoBehaviour
                 GameObject.Find(objectName).GetComponent<boxReturn>().ReturnHome(); // return object to shelf
             }   
         }
-
     }
 
-    private void RemoveFromTable(string objectName)
+    private void RemoveFromTable(string objectName) 
     {
         if(GameObject.Find(objectName).tag != "Player")
         {
-            if(this.piccLine.ContainsKey(objectName) && this.piccLine[objectName] == true)
+            if(this.piccLine.ContainsKey(objectName) && this.piccLine[objectName] == true) // Turns checkmark off if currently correct item is removed from table
             {
                 this.piccLine[objectName] = false;
                 this.truthCounter--;
@@ -124,8 +123,8 @@ public class TableChecker : MonoBehaviour
                 if (this.truthCounter == this.piccLine.Count)
                 {
                     GameObject.Find("NewDoor").GetComponent<DoorMover>().OpenDoor();
-                    //Activates partyMachine
-                    Party.GetComponent<AudioSource>().Play();
+                    
+                    Party.GetComponent<AudioSource>().Play(); //Activates partyMachine
                     Party.GetComponent<ParticleSystem>().Play();
                     //GameObject.Find("TeleportToScoreRoom");
                 }
@@ -144,8 +143,6 @@ public class TableChecker : MonoBehaviour
             }
         }
     }
-
-
 
     //should turn off an object after given time
     private IEnumerator TurnOffObject(GameObject thing, float sec)

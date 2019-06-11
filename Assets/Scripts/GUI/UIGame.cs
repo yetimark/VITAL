@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class UIGame : MonoBehaviour
 {
-    private int strikeNum;      //changed to private both
+    private int strikeNum;      
     private int pointNum;
 
     public GameObject warningScript;
-    public int strikeMax;//for some silliness below. Should be changed to difficulty classes to cover all variable needed to be changed?
+    public int strikeMax;
     public int itemChances;
 
     private void Awake()

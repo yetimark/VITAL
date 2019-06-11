@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TeleportAreaVisible
-  m_Shader: {fileID: 4800000, guid: 787d7485aa6482341a9f55fa37fb84f1, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: RECEIVE_SHADOWS S_SPECULAR_NONE S_UNLIT _ALPHAPREMULTIPLY_ON _EMISSION
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -87,7 +87,9 @@ Material:
     - _Emission: 0.01
     - _EmissionScaleUI: 0
     - _FogMultiplier: 1
+    - _GlossMapScale: 1
     - _Glossiness: 0
+    - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 3
     - _OcclusionStrength: 1
@@ -97,6 +99,8 @@ Material:
     - _OcclusionStrengthIndirectSpecular: 1
     - _Parallax: 0.02
     - _SeeThru: 0.358
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
     - _SpecularMode: 2
     - _SrcBlend: 1
     - _Stencil: 0
