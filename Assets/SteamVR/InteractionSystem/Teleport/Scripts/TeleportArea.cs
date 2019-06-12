@@ -30,7 +30,7 @@ namespace Valve.VR.InteractionSystem
 		{
 			areaMesh = GetComponent<MeshRenderer>();
 
-			tintColorId = Shader.PropertyToID( "_TintColor" );
+			tintColorId = Shader.PropertyToID( "_Color" );
 
 			CalculateBounds();
 		}
