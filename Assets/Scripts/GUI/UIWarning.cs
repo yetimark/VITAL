@@ -25,6 +25,8 @@ public class UIWarning : MonoBehaviour
 
         this.warningsBook.Add("GameOver", "You have made too many errors. Please exit the simulation and practice or try again.");
         this.warningsBook.Add("Strike", "You have made an error. Proceed with caution. Once you have made to many errors you will strike out.");
+        this.warningsBook.Add("IncorrectOrder", "You must wash your hand correctly.");
+
         this.warningsBook.Add("SoapHands", "You must put soap on your hands to make them clean!");
         this.warningsBook.Add("WashHands", "You forgot to wash your hands!");
         this.warningsBook.Add("DryHands", "You must dry your hands before proceeding!");
@@ -41,7 +43,6 @@ public class UIWarning : MonoBehaviour
     IEnumerator CloseAfterWarning(float sec)
     {
         yield return new WaitForSeconds(sec);
-        //GameObject.FindGameObjectWithTag("Warning").SetActive(false);
     }
 
 	void Update ()

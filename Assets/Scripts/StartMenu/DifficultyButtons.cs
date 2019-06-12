@@ -7,12 +7,14 @@ public class DifficultyButtons : MonoBehaviour
     public GameObject player;
     public GameObject spawn;
     private GameObject gameUI;
+    private GameObject timer;
 
     public void Awake()
     {
         Debug.Log("lobbyMusic");
         GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Play();
         this.gameUI = GameObject.Find("Game UI");
+        this.timer = GameObject.Find("Timer");
     }
 
     public void EasyButton()
@@ -21,12 +23,12 @@ public class DifficultyButtons : MonoBehaviour
         new WaitForSeconds(0.5f);
 
         Debug.Log("EasyButton pressed");
-        StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(GameObject.Find("Timer").GetComponent<Timer>().minutes = 3,
-                                                                                     GameObject.Find("Timer").GetComponent<Timer>().seconds = 0,
-                                                                                     GameObject.Find("Timer").GetComponent<Timer>().difficulty = "easy"));
+        StartCoroutine(timer.GetComponent<Timer>().CountdownStart(timer.GetComponent<Timer>().minutes = 3,
+                                                                  timer.GetComponent<Timer>().seconds = 0,
+                                                                  timer.GetComponent<Timer>().difficulty = "easy"));
 
         this.player.transform.position = this.spawn.transform.position;
-        this.player.transform.rotation = spawn.transform.rotation;
+        this.player.transform.rotation = this.spawn.transform.rotation;
         GameObject.Find("StrikePanel");
     }
     public void MediumButton()
@@ -40,9 +42,9 @@ public class DifficultyButtons : MonoBehaviour
 
         this.player.transform.position = this.spawn.transform.position;
         this.player.transform.rotation = this.spawn.transform.rotation;
-        StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(GameObject.Find("Timer").GetComponent<Timer>().minutes = 1, 
-                                                                                     GameObject.Find("Timer").GetComponent<Timer>().seconds = 30, 
-                                                                                     GameObject.Find("Timer").GetComponent<Timer>().difficulty = "medium"));
+        StartCoroutine(timer.GetComponent<Timer>().CountdownStart(timer.GetComponent<Timer>().minutes = 1,
+                                                                  timer.GetComponent<Timer>().seconds = 30,
+                                                                  timer.GetComponent<Timer>().difficulty = "medium"));
 
         this.gameUI.GetComponent<UIGame>().strikeMax = 4;
     }
@@ -58,9 +60,9 @@ public class DifficultyButtons : MonoBehaviour
         this.player.transform.position = this.spawn.transform.position;
         this.player.transform.rotation = this.spawn.transform.rotation;
 
-        StartCoroutine(GameObject.Find("Timer").GetComponent<Timer>().CountdownStart(GameObject.Find("Timer").GetComponent<Timer>().minutes = 1,
-                                                                                     GameObject.Find("Timer").GetComponent<Timer>().seconds = 0,
-                                                                                     GameObject.Find("Timer").GetComponent<Timer>().difficulty = "hard"));
+        StartCoroutine(timer.GetComponent<Timer>().CountdownStart(timer.GetComponent<Timer>().minutes = 1,
+                                                                  timer.GetComponent<Timer>().seconds = 0,
+                                                                  timer.GetComponent<Timer>().difficulty = "hard"));
 
         this.gameUI.GetComponent<UIGame>().strikeMax = 2;
     }

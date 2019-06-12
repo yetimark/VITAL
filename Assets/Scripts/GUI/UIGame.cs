@@ -25,6 +25,10 @@ public class UIGame : MonoBehaviour
         GameObject.Find("Strikes").GetComponent<Text>().text = this.strikeNum.ToString();
 
     }
+    public void RemovePoint()
+    {
+        this.pointNum -= 1;
+    }
 
     public void GoodAction()
     {

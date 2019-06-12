@@ -8,18 +8,18 @@ using UnityEngine.UI;
 public class TableChecker : MonoBehaviour
 {
     // Dictionary of objects needed for skill as keyword with a bool to stating if it is on the table already or not
-    private Dictionary<string, bool> piccLine = new Dictionary<string, bool>();
+    private Dictionary<string, bool> checkList = new Dictionary<string, bool>();
     private int truthCounter;
 
     public GameObject checklistPanel;
     public bool panelOn = true;
     public GameObject Party;
-
-    private bool washedOnce = true; // For requiring handwashing before item placement on table
+    private GameObject gameUI;
 
     public bool handsRinsed = false;
-    public bool handsDried = false;
     public bool handsSoaped = false;
+    public bool handsDried = false;
+
     private bool sinkSteps = false;
 
     private void Update()
@@ -27,10 +27,13 @@ public class TableChecker : MonoBehaviour
         if (this.handsRinsed && this.handsDried && this.handsSoaped)
         {
             this.sinkSteps = true;
+            GameObject.Find("SinkSteps").GetComponent<Image>().enabled = true;
         }
     }
+
     void Awake()
     {
+        gameUI = GameObject.Find("Game UI");
         Party = GameObject.FindGameObjectWithTag("Party");
         Party.GetComponent<ParticleSystem>().Pause();
         this.checklistPanel = GameObject.Find("CheckListPanel");
@@ -41,17 +44,18 @@ public class TableChecker : MonoBehaviour
     // Adds all of the objects needed for Picc Line Skill
     private void CreateSupplyList_PiccLine()
     {
-        this.piccLine.Add("Dressing Change Kit", false);
-        this.piccLine.Add("Face Mask for Patient", false);
-        this.piccLine.Add("Securement Device", false);
-        this.piccLine.Add("Sterile 4x4", false);
-        this.piccLine.Add("Sterile Drape", false);
-        this.piccLine.Add("Sterile Gloves", false);
-        this.piccLine.Add("Tegaderm", false);
-        this.piccLine.Add("Alcohol Wipes", false);
-        this.piccLine.Add("Biopatch", false);
-        this.piccLine.Add("Chux", false);
-        this.piccLine.Add("Clean Gloves", false);
+        this.checkList.Add("Dressing Change Kit", false);
+        this.checkList.Add("Face Mask for Patient", false);
+        this.checkList.Add("Securement Device", false);
+        this.checkList.Add("Sterile 4x4", false);
+        this.checkList.Add("Sterile Drape", false);
+        this.checkList.Add("Sterile Gloves", false);
+        this.checkList.Add("Tegaderm", false);
+        this.checkList.Add("Alcohol Wipes", false);
+        this.checkList.Add("Biopatch", false);
+        this.checkList.Add("Chux", false);
+        this.checkList.Add("Clean Gloves", false);
+        Debug.Log("PiccLine Checklist Created");
     }
 
     void Start()
@@ -59,9 +63,9 @@ public class TableChecker : MonoBehaviour
         this.checklistPanel.SetActive(this.panelOn); // Change true or false depending upon simulation difficulty
         GameObject.Find("SinkSteps").GetComponent<Image>().enabled = false;
 
-        if (this.panelOn) // Should be activated on button press for difficulty 
+        if (this.panelOn) // Should be activated on button press for difficulty
         {
-            foreach (string itemName in this.piccLine.Keys)      //#FIXME:    piccLine should change upon skill selection
+            foreach (string itemName in this.checkList.Keys)      //#FIXME:    piccLine should change upon skill selection
             {
                 GameObject.Find(itemName + ".").GetComponent<Image>().enabled = false;
             }
@@ -74,17 +78,17 @@ public class TableChecker : MonoBehaviour
         {
             //checks objects on table, updates appropriately
           
-            if (this.piccLine.ContainsKey(objectName) && this.piccLine[objectName] == false) // If key is not in dictionary, will it be false for part two if it was the only one?
+            if (this.checkList.ContainsKey(objectName) && this.checkList[objectName] == false) // If key is not in dictionary, will it be false for part two if it was the only one?
             {
-                this.piccLine[objectName] = true;
+                this.checkList[objectName] = true;
                 this.truthCounter++;
                 Debug.Log("truthCounter" + truthCounter);
 
-                GameObject.Find("Game UI").GetComponent<UIGame>().GoodAction();
+                gameUI.GetComponent<UIGame>().GoodAction();
             }
             else
             {
-                GameObject.Find("Game UI").GetComponent<UIGame>().BadAction();
+                gameUI.GetComponent<UIGame>().BadAction();
                 GameObject.Find(objectName).GetComponent<boxReturn>().ReturnHome(); // return object to shelf
             }   
         }
@@ -94,10 +98,11 @@ public class TableChecker : MonoBehaviour
     {
         if(GameObject.Find(objectName).tag != "Player")
         {
-            if(this.piccLine.ContainsKey(objectName) && this.piccLine[objectName] == true) // Turns checkmark off if currently correct item is removed from table
+            if(this.checkList.ContainsKey(objectName) && this.checkList[objectName] == true) // Turns checkmark off if currently correct item is removed from table
             {
-                this.piccLine[objectName] = false;
+                this.checkList[objectName] = false;
                 this.truthCounter--;
+                gameUI.GetComponent<UIGame>().RemovePoint();
                 Debug.Log("truthCounter" + truthCounter);
             }
         }
@@ -108,43 +113,38 @@ public class TableChecker : MonoBehaviour
     {
         //if(this.handsSoaped && this.handsRinsed && this.handsDried)
         //then player is code side allowed to place objects on the table\
-        //#FixMe: Add a warning when placing things on table without doing the sink things
+
         if (other.tag != "Player")
         {
             if (this.sinkSteps)
             {
-                // Checkbox is green for washed hands            
-
+                
                 Debug.Log(other.name);
                 NewToTable(other.name);
 
                 GameObject.Find(other.gameObject.name + ".").GetComponent<Image>().enabled = true; // Turn unique checkbox on
 
-                if (this.truthCounter == this.piccLine.Count)
+                if (this.truthCounter == this.checkList.Count)
                 {
                     GameObject.Find("NewDoor").GetComponent<DoorMover>().OpenDoor();
                     
                     Party.GetComponent<AudioSource>().Play(); //Activates partyMachine
                     Party.GetComponent<ParticleSystem>().Play();
-                    //GameObject.Find("TeleportToScoreRoom");
                 }
 
             }
-            else // Warning prompt for washing hands and return object to starting position
+            else
             {
-                //      #FIXME:     Perhaps have the object display it was wrong, wait, and them move
                 other.GetComponent<boxReturn>().ReturnHome();
 
-                Debug.Log("Make sure to wash and dry your hands!");
+                Debug.Log("Make sure to wash, soap and dry your hands!");
 
-                GameObject.Find("Game UI").GetComponent<UIWarning>().WarningMessage("DryHands");
-
-                //Strikes and points taken care of in following method
+                gameUI.GetComponent<UIWarning>().WarningMessage("WashHands");
             }
         }
     }
 
-    //should turn off an object after given time
+    //should turn off an object after given time ==================================================================== NOT SURE OF THIS PURPOSE
     private IEnumerator TurnOffObject(GameObject thing, float sec)
     {
         yield return new WaitForSeconds(sec);
@@ -153,10 +153,11 @@ public class TableChecker : MonoBehaviour
 
     private void OnTriggerExit(Collider other)      //removes items from list when they are taken off of the table
     {
-        if (this.piccLine.ContainsKey(other.name) && this.piccLine[other.name] == true)
+        if (this.checkList.ContainsKey(other.name) && this.checkList[other.name] == true)
         {
             GameObject.Find(other.gameObject.name + ".").GetComponent<Image>().enabled = false; //turn off check box
             RemoveFromTable(other.name);
+
         }
     }
 }
