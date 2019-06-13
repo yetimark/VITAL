@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 24435553}
   - component: {fileID: 24435552}
   m_Layer: 5
-  m_Name: checkspot_10
+  m_Name: 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5787,7 +5787,7 @@ GameObject:
   - component: {fileID: 41850909}
   - component: {fileID: 41850908}
   m_Layer: 5
-  m_Name: checkspot_7
+  m_Name: 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14720,7 +14720,7 @@ GameObject:
   - component: {fileID: 318069543}
   - component: {fileID: 318069542}
   m_Layer: 5
-  m_Name: checkspot_4
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21156,7 +21156,7 @@ GameObject:
   - component: {fileID: 531110498}
   - component: {fileID: 531110497}
   m_Layer: 5
-  m_Name: checkspot_8
+  m_Name: 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22714,7 +22714,7 @@ GameObject:
   - component: {fileID: 602509427}
   - component: {fileID: 602509426}
   m_Layer: 5
-  m_Name: checkspot_3
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23556,7 +23556,7 @@ GameObject:
   - component: {fileID: 618216728}
   - component: {fileID: 618216727}
   m_Layer: 5
-  m_Name: checkspot_9
+  m_Name: 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56358,7 +56358,7 @@ GameObject:
   - component: {fileID: 1425117819}
   - component: {fileID: 1425117818}
   m_Layer: 5
-  m_Name: checkspot_1
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62345,7 +62345,7 @@ GameObject:
   - component: {fileID: 1636868049}
   - component: {fileID: 1636868048}
   m_Layer: 5
-  m_Name: checkspot_5
+  m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68087,7 +68087,7 @@ GameObject:
   - component: {fileID: 1775210031}
   - component: {fileID: 1775210030}
   m_Layer: 5
-  m_Name: checkspot_6
+  m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68955,7 +68955,7 @@ GameObject:
   - component: {fileID: 1812587435}
   - component: {fileID: 1812587434}
   m_Layer: 5
-  m_Name: checkspot_11
+  m_Name: 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69510,7 +69510,7 @@ GameObject:
   - component: {fileID: 1842101627}
   - component: {fileID: 1842101626}
   m_Layer: 5
-  m_Name: checkspot_2
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
