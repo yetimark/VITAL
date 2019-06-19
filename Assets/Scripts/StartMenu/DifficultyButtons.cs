@@ -19,6 +19,10 @@ public class DifficultyButtons : MonoBehaviour
 
     public void EasyButton()
     {
+        // Assigns the current difficulty and room to the global storage
+        GlobalData.Instance.difficulty = "Easy";
+        GlobalData.Instance.roomName = "SupplyRoom";
+
         GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
         new WaitForSeconds(0.5f);
 
@@ -33,6 +37,10 @@ public class DifficultyButtons : MonoBehaviour
     }
     public void MediumButton()
     {
+        // Assigns the current difficulty and room to the global storage
+        GlobalData.Instance.difficulty = "Medium";
+        GlobalData.Instance.roomName = "SupplyRoom";
+
         GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
         new WaitForSeconds(0.5f);
 
@@ -50,6 +58,9 @@ public class DifficultyButtons : MonoBehaviour
     }
     public void HardButton()
     {
+        GlobalData.Instance.difficulty = "Hard";
+        GlobalData.Instance.roomName = "SupplyRoom";
+
         GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
         new WaitForSeconds(0.5f);
 

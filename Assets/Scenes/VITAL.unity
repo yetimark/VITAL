@@ -7014,7 +7014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 84931310}
   m_Layer: 0
-  m_Name: levelSpawn
+  m_Name: SupplyRoomSpawn
   m_TagString: Spawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20164,6 +20164,54 @@ Transform:
   m_Father: {fileID: 547612193}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &490084292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 490084293}
+  - component: {fileID: 490084294}
+  m_Layer: 0
+  m_Name: GameControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &490084293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490084292}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -43.642464, y: 33.617737, z: 10.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &490084294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490084292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d1e0bc73ae66f4c957fc853a40dfb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  savedPlayerData: {fileID: 0}
+  roomName: 
+  difficulty: 
+  playerStrikes: 0
+  playerPoints: 0
 --- !u!1 &494381989
 GameObject:
   m_ObjectHideFlags: 0
@@ -32864,6 +32912,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1601234771}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &881577939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881577938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef7e2361a4c9134ba171307f09ed362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localPlayerData: {fileID: 0}
+  playerPoints: 0
+  playerStrikes: 0
 --- !u!4 &881577940 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4779979241062830, guid: af466c36467957343a41eda8bc9da7a8,
