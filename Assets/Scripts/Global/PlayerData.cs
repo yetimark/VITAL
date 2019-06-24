@@ -7,7 +7,6 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     //This class holds session data, and loads/saves to the saved data set
-
     public string roomName;
     public string difficulty;
     public int playerStrikes;
@@ -75,8 +74,6 @@ public class PlayerData : MonoBehaviour
         supplyRoom = saveData.supplyRoom;
         medRoom = saveData.medRoom;
         skillsRoom = saveData.skillsRoom;
-
-        SetStats();
     }
 
 
@@ -91,14 +88,5 @@ public class PlayerData : MonoBehaviour
         supplyRoom = saveData.supplyRoom;
         medRoom = saveData.medRoom;
         skillsRoom = saveData.skillsRoom;
-    }
-
-    //updates stats at runtime
-    public void SetStats()
-    {
-        GetComponent<GameController>().playerHealth = totalHealth;
-        GetComponent<GameController>().playerPower = totalAmmo;
-        GetComponent<GameController>().playerMaxHealth = totalHealth;
-        GetComponent<GameController>().playerMaxPower = totalAmmo;
     }
 }
