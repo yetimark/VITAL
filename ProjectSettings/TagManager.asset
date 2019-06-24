@@ -11,11 +11,14 @@ TagManager:
   - Clock
   - Spawn
   - PaperTowel
-  - FakeTowel
   - Warning
   - Strikes
   - Party
   - lobbyMusic
+  - projectile
+  - FxTemporaire
+  - PiccLine
+  - 'IVInitiation '
   layers:
   - Default
   - TransparentFX
