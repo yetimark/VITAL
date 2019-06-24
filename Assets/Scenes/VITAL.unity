@@ -34375,21 +34375,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1601234771}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &881577939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881577938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ef7e2361a4c9134ba171307f09ed362, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  localPlayerData: {fileID: 0}
-  playerPoints: 0
-  playerStrikes: 0
 --- !u!4 &881577940 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4779979241062830, guid: af466c36467957343a41eda8bc9da7a8,
@@ -63942,7 +63927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779979241062830, guid: af466c36467957343a41eda8bc9da7a8, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4779979241062830, guid: af466c36467957343a41eda8bc9da7a8, type: 3}
       propertyPath: m_LocalScale.x
