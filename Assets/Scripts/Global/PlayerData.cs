@@ -80,13 +80,12 @@ public class PlayerData : MonoBehaviour
     //sets default values
     public void GenerateDefaults()
     {
-        roomName = saveData.roomName;
-        difficulty = saveData.difficulty;
-        playerStrikes = saveData.playerStrikes;
-        playerPoints = saveData.playerPoints;
+        difficulty = null;
+        playerStrikes = 0;
+        playerPoints = 0;
 
-        supplyRoom = saveData.supplyRoom;
-        medRoom = saveData.medRoom;
-        skillsRoom = saveData.skillsRoom;
+        supplyRoom = false;
+        medRoom = false;
+        skillsRoom = false;
     }
 }
