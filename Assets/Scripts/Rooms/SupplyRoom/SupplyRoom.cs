@@ -6,7 +6,6 @@ public class SupplyRoom : MonoBehaviour
 {
     private GameObject gameManager;
 
-    private GameObject gameUI;
     private GameObject timer;
     private GameObject easyMusic;
     private GameObject mediumMusic;
@@ -15,7 +14,6 @@ public class SupplyRoom : MonoBehaviour
     public void Awake()
     {
         gameManager = GameObject.Find("GameManager");
-        gameUI = GameObject.Find("Game UI");
         timer = GameObject.Find("Timer");
 
         //Where music is located within the scene
@@ -29,7 +27,6 @@ public class SupplyRoom : MonoBehaviour
     {
         PlayerData PD = gameManager.GetComponent<PlayerData>();
         Timer timerObject = timer.GetComponent<Timer>();
-        UIGame uiGameObject = gameUI.GetComponent<UIGame>();
         PD.Load();
 
         if (PD.difficulty == "Easy")
@@ -45,7 +42,7 @@ public class SupplyRoom : MonoBehaviour
             StartCoroutine(timerObject.CountdownStart(timerObject.minutes = 1,
                                                       timerObject.seconds = 30,
                                                       timerObject.difficulty = "Medium"));
-            uiGameObject.strikeMax = 4;
+            PD.maxStrikes = 4;
         }
         else //The default is Hard Difficulty
         {
@@ -54,7 +51,8 @@ public class SupplyRoom : MonoBehaviour
             StartCoroutine(timerObject.CountdownStart(timerObject.minutes = 1,
                                                       timerObject.seconds = 0,
                                                       timerObject.difficulty = "Hard"));
-            uiGameObject.strikeMax = 2;
+            PD.maxStrikes = 2;
         }
     }
+    
 }

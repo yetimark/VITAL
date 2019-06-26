@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIGame : MonoBehaviour
 {
-    private GameManager gameManager;
+    private GameObject gameManager;
 
     public GameObject warningScript;
     public int itemChances;

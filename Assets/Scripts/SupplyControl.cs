@@ -8,40 +8,32 @@ public class SupplyControl : MonoBehaviour
     public GameObject emptyLocations;
     public Transform spawnLocation;
     public List<Transform> locations;
-    //private int locationNumber = 0;
-    //this.transform.GetChildCount;
 
     private void Awake()
     {
-        this.supplies = GameObject.Find("Supplies").transform;
-        this.emptyLocations = GameObject.Find("SupplyLocations");
-        this.spawnLocation = this.supplies;
+        supplies = GameObject.Find("Supplies").transform;
+        emptyLocations = GameObject.Find("SupplyLocations");
+        spawnLocation = supplies;
         AddLocations();
         RandomizeSupplies();
     }
 
-    void Start ()
-    {
-        //AddLocations();
-        //RandomizeSupplies();
-	}
-
     void AddLocations()     //adds empty gameobjects to a list for supply placement
     {
-        for(int i = 0; i < this.emptyLocations.transform.childCount; i++)
+        for(int i = 0; i < emptyLocations.transform.childCount; i++)
         {
-            this.locations.Add(this.emptyLocations.transform.GetChild(i));
+            locations.Add(emptyLocations.transform.GetChild(i));
         }
     }
 
     void RandomizeSupplies()
     {
         //lists are modefiable      so when item is used remove from list
-        for (int i = this.supplies.childCount - 1; i > 0; i--)
+        for (int i = supplies.childCount - 1; i > 0; i--)
         {
-            this.spawnLocation = this.locations[Random.Range(0, i)];
-            this.supplies.GetChild(i).transform.position = this.spawnLocation.position;
-            this.locations.Remove(this.spawnLocation);
+            spawnLocation = locations[Random.Range(0, i)];
+            supplies.GetChild(i).transform.position = spawnLocation.position;
+            locations.Remove(spawnLocation);
         }
     }
 }
