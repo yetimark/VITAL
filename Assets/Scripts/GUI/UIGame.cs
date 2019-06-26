@@ -5,54 +5,59 @@ using UnityEngine.UI;
 
 public class UIGame : MonoBehaviour
 {
-    private int strikeNum;      
-    private int pointNum;
+    private GameManager gameManager;
 
     public GameObject warningScript;
-    public int strikeMax;
     public int itemChances;
+
+    private GameObject points;
+    private GameObject strikes;
 
     private void Awake()
     {
-        this.warningScript = GameObject.Find("Game UI");
+        warningScript = GameObject.FindGameObjectWithTag("Game UI");
+        points = GameObject.FindGameObjectWithTag("Points");
+        strikes = GameObject.FindGameObjectWithTag("Strikes");
     }
 
     private void Start()
     {
-
-        this.pointNum = 0;
-        GameObject.Find("PointNum").GetComponent<Text>().text = this.pointNum.ToString();
-        GameObject.Find("Strikes").GetComponent<Text>().text = this.strikeNum.ToString();
+        PlayerData PD = gameManager.GetComponent<PlayerData>();
+        PD.playerPoints = 0;
+        points.GetComponent<Text>().text = PD.playerPoints.ToString();
+        strikes.GetComponent<Text>().text = PD.playerStrikes.ToString();
 
     }
     public void RemovePoint()
     {
-        this.pointNum -= 1;
+        PlayerData PD = gameManager.GetComponent<PlayerData>();
+        PD.playerPoints -= 1;
     }
 
     public void GoodAction()
     {
-        this.pointNum++;
-        Debug.Log("POINT" + pointNum);
+        PlayerData PD = gameManager.GetComponent<PlayerData>();
+        PD.playerPoints++;
+        Debug.Log("POINT" + PD.playerPoints);
 
-        GameObject.Find("PointNum").GetComponent<Text>().text = this.pointNum.ToString();
+        points.GetComponent<Text>().text = PD.playerPoints.ToString();
     }
 
     public void BadAction()
     {
-        this.strikeNum++;
-        Debug.Log("STRIKE" + strikeNum);
+        PlayerData PD = gameManager.GetComponent<PlayerData>();
+        PD.playerStrikes++;
+        Debug.Log("STRIKE" + PD.playerStrikes);
+        GameObject.Find("Strikes").GetComponent<Text>().text = PD.playerStrikes.ToString();
 
-        GameObject.Find("Strikes").GetComponent<Text>().text = strikeNum.ToString();
-
-        if (this.strikeNum == this.strikeMax)
+        if (PD.playerStrikes == PD.maxStrikes)
         {
-            this.warningScript.GetComponent<UIWarning>().WarningMessage("GameOver");
+            warningScript.GetComponent<UIWarning>().WarningMessage("GameOver");
             Time.timeScale = 0f;
         }
         else
         {
-            this.warningScript.GetComponent<UIWarning>().WarningMessage("Strike");
+            warningScript.GetComponent<UIWarning>().WarningMessage("Strike");
         }
     }
 }

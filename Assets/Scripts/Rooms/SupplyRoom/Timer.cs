@@ -37,15 +37,15 @@ public class Timer : MonoBehaviour
             }
             if (this.minutes == 0 && this.seconds == 30)
             {
-                if (this.difficulty == "easy")
+                if (this.difficulty == "Easy")
                 {
                     GameObject.Find("easyMusic").GetComponent<AudioSource>().Stop();
                 } 
-                if (this.difficulty == "medium")
+                if (this.difficulty == "Medium")
                 {
                     GameObject.Find("mediumMusic").GetComponent<AudioSource>().Stop();
                 } 
-                if (this.difficulty == "hard")
+                if (this.difficulty == "Hard")
                 {
                     GameObject.Find("hardMusic").GetComponent<AudioSource>().Stop();
                 } 
@@ -58,17 +58,17 @@ public class Timer : MonoBehaviour
             {
                 while (this.soundOn == false)
                 {
-                    if (this.difficulty == "easy") //Starts Difficulty:EASY music
+                    if (this.difficulty == "Easy") //Starts Difficulty:EASY music
                     {
                         GameObject.Find("easyMusic").GetComponent<AudioSource>().Play();
                         this.soundOn = true;
                     } 
-                    else if (this.difficulty == "medium") //Starts Difficulty:MEDIUM music
+                    else if (this.difficulty == "Medium") //Starts Difficulty:MEDIUM music
                     {
                         GameObject.Find("mediumMusic").GetComponent<AudioSource>().Play();
                         this.soundOn = true;
                     } 
-                    else if (this.difficulty == "hard") //Starts Difficulty:HARD music
+                    else if (this.difficulty == "Hard") //Starts Difficulty:HARD music
                     {
                         GameObject.Find("hardMusic").GetComponent<AudioSource>().Play();
                         this.soundOn = true;
@@ -98,7 +98,6 @@ public class Timer : MonoBehaviour
             {
                 this.seconds--;
             }
-            
         }
     }
 }

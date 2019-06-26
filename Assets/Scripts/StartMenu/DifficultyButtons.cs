@@ -1,75 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DifficultyButtons : MonoBehaviour
 {
     public GameObject player;
     public GameObject spawn;
-    private GameObject gameUI;
-    private GameObject timer;
+
+    private GameObject lobbyMusic;
+
+    private GameObject gameManager;
 
     public void Awake()
     {
-        Debug.Log("lobbyMusic");
-        GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Play();
-        this.gameUI = GameObject.Find("Game UI");
-        this.timer = GameObject.Find("Timer");
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        lobbyMusic = GameObject.FindGameObjectWithTag("LobbyMusic");
+    }
+    public void Start()
+    {
+        lobbyMusic.GetComponent<AudioSource>().Play();
+        Debug.Log("LobbyMusic");
     }
 
     public void EasyButton()
     {
-        // Assigns the current difficulty and room to the global storage
+        Debug.Log("Easy Button pressed");
+        lobbyMusic.GetComponent<AudioSource>().Stop();
 
-        GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
-        new WaitForSeconds(0.5f);
-
-        Debug.Log("EasyButton pressed");
-        StartCoroutine(timer.GetComponent<Timer>().CountdownStart(timer.GetComponent<Timer>().minutes = 3,
-                                                                  timer.GetComponent<Timer>().seconds = 0,
-                                                                  timer.GetComponent<Timer>().difficulty = "easy"));
-
-        this.player.transform.position = this.spawn.transform.position;
-        this.player.transform.rotation = this.spawn.transform.rotation;
-        GameObject.Find("StrikePanel");
+        PlayerData PD = gameManager.GetComponent<PlayerData>();
+        PD.difficulty = "Easy";
+        PD.Save();
+        SceneManager.LoadScene("SupplyRoom"); 
     }
     public void MediumButton()
     {
-        // Assigns the current difficulty and room to the global storage
+        Debug.Log("Medium Button pressed");
+        lobbyMusic.GetComponent<AudioSource>().Stop();
 
-
-        GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
-        new WaitForSeconds(0.5f);
-
-        Debug.Log("MediumButton pressed");
-        
-        GameObject.Find("mediumMusic").GetComponent<AudioSource>().Play();
-
-        this.player.transform.position = this.spawn.transform.position;
-        this.player.transform.rotation = this.spawn.transform.rotation;
-        StartCoroutine(timer.GetComponent<Timer>().CountdownStart(timer.GetComponent<Timer>().minutes = 1,
-                                                                  timer.GetComponent<Timer>().seconds = 30,
-                                                                  timer.GetComponent<Timer>().difficulty = "medium"));
-
-        this.gameUI.GetComponent<UIGame>().strikeMax = 4;
+        PlayerData PD = gameManager.GetComponent<PlayerData>();
+        PD.difficulty = "Medium";
+        PD.maxStrikes = 4;
+        PD.Save();
+        SceneManager.LoadScene("SupplyRoom");
     }
     public void HardButton()
     {
+        Debug.Log("Hard Button pressed");
+        lobbyMusic.GetComponent<AudioSource>().Stop();
 
-        GameObject.Find("lobbyMusic").GetComponent<AudioSource>().Stop();
-        new WaitForSeconds(0.5f);
-
-        Debug.Log("HardButton pressed");
-
-        GameObject.Find("hardMusic").GetComponent<AudioSource>().Play();
-
-        this.player.transform.position = this.spawn.transform.position;
-        this.player.transform.rotation = this.spawn.transform.rotation;
-
-        StartCoroutine(timer.GetComponent<Timer>().CountdownStart(timer.GetComponent<Timer>().minutes = 1,
-                                                                  timer.GetComponent<Timer>().seconds = 0,
-                                                                  timer.GetComponent<Timer>().difficulty = "hard"));
-
-        this.gameUI.GetComponent<UIGame>().strikeMax = 2;
+        PlayerData PD = gameManager.GetComponent<PlayerData>();
+        PD.difficulty = "Hard";
+        PD.maxStrikes = 2;
+        PD.Save();
+        SceneManager.LoadScene("SupplyRoom");
     }
 }

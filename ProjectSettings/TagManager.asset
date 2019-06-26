@@ -19,6 +19,13 @@ TagManager:
   - FxTemporaire
   - PiccLine
   - 'IVInitiation '
+  - GameManager
+  - EasyMusic
+  - MediumMusic
+  - HardMusic
+  - LobbyMusic
+  - Points
+  - Game UI
   layers:
   - Default
   - TransparentFX

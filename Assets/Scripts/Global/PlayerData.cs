@@ -7,14 +7,21 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     //This class holds session data, and loads/saves to the saved data set
-    public string roomName;
+    //GameStats
     public string difficulty;
+    public int maxStrikes;
+
+    //PlayerStats
     public int playerStrikes;
     public int playerPoints;
 
-    public bool supplyRoom;
-    public bool medRoom;
-    public bool skillsRoom;
+    //Supply Room Data
+    public bool supplyRoom_ChecklistComplete;
+
+    //CompletedRooms
+    public bool supplyRoom_Completion;
+    public bool medRoom_Completion;
+    public bool skillsRoom_Completion;
 
     public PlayerDataSet saveData;
 
@@ -28,14 +35,17 @@ public class PlayerData : MonoBehaviour
     //saves data to file
     public void Save()
     {
-        saveData.roomName = roomName;
         saveData.difficulty = difficulty;
+        saveData.maxStrikes = maxStrikes;
+
         saveData.playerStrikes = playerStrikes;
         saveData.playerPoints = playerPoints;
 
-        saveData.supplyRoom = supplyRoom;
-        saveData.medRoom = medRoom;
-        saveData.skillsRoom = skillsRoom;
+        saveData.supplyRoom_ChecklistComplete = supplyRoom_ChecklistComplete;
+
+        saveData.supplyRoom_Completion = supplyRoom_Completion;
+        saveData.medRoom_Completion = medRoom_Completion;
+        saveData.skillsRoom_Completion = skillsRoom_Completion;
 
         string destination = Application.persistentDataPath + "/save.dat";
         FileStream file;
@@ -66,14 +76,17 @@ public class PlayerData : MonoBehaviour
         saveData = (PlayerDataSet)bf.Deserialize(file);
         file.Close();
 
-        roomName = saveData.roomName;
         difficulty = saveData.difficulty;
+        maxStrikes = saveData.maxStrikes;
+
         playerStrikes = saveData.playerStrikes;
         playerPoints = saveData.playerPoints;
 
-        supplyRoom = saveData.supplyRoom;
-        medRoom = saveData.medRoom;
-        skillsRoom = saveData.skillsRoom;
+        supplyRoom_ChecklistComplete = saveData.supplyRoom_ChecklistComplete;
+
+        supplyRoom_Completion = saveData.supplyRoom_Completion;
+        medRoom_Completion = saveData.medRoom_Completion;
+        skillsRoom_Completion = saveData.skillsRoom_Completion;
     }
 
 
@@ -81,11 +94,15 @@ public class PlayerData : MonoBehaviour
     public void GenerateDefaults()
     {
         difficulty = null;
+        maxStrikes = 0;
+
         playerStrikes = 0;
         playerPoints = 0;
 
-        supplyRoom = false;
-        medRoom = false;
-        skillsRoom = false;
+        supplyRoom_ChecklistComplete = false;
+
+        supplyRoom_Completion = false;
+        medRoom_Completion = false;
+        skillsRoom_Completion = false;
     }
 }

@@ -7,8 +7,10 @@ using UnityEngine.UI;
 
 public class TableChecker : MonoBehaviour
 {
+    private GameObject gameManager;
+
     // Dictionary of objects needed for skill as keyword with a bool to stating if it is on the table already or not
-    private Dictionary<string, bool> checkList = new Dictionary<string, bool>();
+    private Dictionary<string, bool> suppliesChecklist = new Dictionary<string, bool>();
     private int truthCounter;
 
     public GameObject checklistPanel;
@@ -24,48 +26,38 @@ public class TableChecker : MonoBehaviour
 
     private void Update()
     {
-        if (this.handsRinsed && this.handsDried && this.handsSoaped)
+        if (handsRinsed && handsDried && handsSoaped)
         {
-            this.sinkSteps = true;
+            sinkSteps = true;
             GameObject.Find("SinkSteps").GetComponent<Image>().enabled = true;
         }
-    }
-
-    void Awake()
-    {
-        gameUI = GameObject.Find("Game UI");
-        Party = GameObject.FindGameObjectWithTag("Party");
-        Party.GetComponent<ParticleSystem>().Pause();
-        this.checklistPanel = GameObject.Find("CheckListPanel");
-
-        CreateSupplyList_PiccLine();
     }
 
     // Adds all of the objects needed for Picc Line Skill
     private void CreateSupplyList_PiccLine()
     {
-        this.checkList.Add("Dressing Change Kit", false);
-        this.checkList.Add("Face Mask for Patient", false);
-        this.checkList.Add("Securement Device", false);
-        this.checkList.Add("Sterile 4x4", false);
-        this.checkList.Add("Sterile Drape", false);
-        this.checkList.Add("Sterile Gloves", false);
-        this.checkList.Add("Tegaderm", false);
-        this.checkList.Add("Alcohol Wipes", false);
-        this.checkList.Add("Biopatch", false);
-        this.checkList.Add("Chux", false);
-        this.checkList.Add("Clean Gloves", false);
+        suppliesChecklist.Add("Dressing Change Kit", false);
+        suppliesChecklist.Add("Face Mask for Patient", false);
+        suppliesChecklist.Add("Securement Device", false);
+        suppliesChecklist.Add("Sterile 4x4", false);
+        suppliesChecklist.Add("Sterile Drape", false);
+        suppliesChecklist.Add("Sterile Gloves", false);
+        suppliesChecklist.Add("Tegaderm", false);
+        suppliesChecklist.Add("Alcohol Wipes", false);
+        suppliesChecklist.Add("Biopatch", false);
+        suppliesChecklist.Add("Chux", false);
+        suppliesChecklist.Add("Clean Gloves", false);
         Debug.Log("PiccLine Checklist Created");
     }
 
     void Start()
     {
-        this.checklistPanel.SetActive(this.panelOn); // Change true or false depending upon simulation difficulty
+        checklistPanel.SetActive(panelOn); // Change true or false depending upon simulation difficulty
         GameObject.Find("SinkSteps").GetComponent<Image>().enabled = false;
 
-        if (this.panelOn) // Should be activated on button press for difficulty
+        if (panelOn) // Should be activated on button press for difficulty
         {
-            foreach (string itemName in this.checkList.Keys)      //#FIXME:    piccLine should change upon skill selection
+            foreach (string itemName in suppliesChecklist.Keys)      //#FIXME:    piccLine should change upon skill selection
             {
                 GameObject.Find(itemName + ".").GetComponent<Image>().enabled = false;
             }
@@ -78,10 +70,10 @@ public class TableChecker : MonoBehaviour
         {
             //checks objects on table, updates appropriately
           
-            if (this.checkList.ContainsKey(objectName) && this.checkList[objectName] == false) // If key is not in dictionary, will it be false for part two if it was the only one?
+            if (suppliesChecklist.ContainsKey(objectName) && suppliesChecklist[objectName] == false) // If key is not in dictionary, will it be false for part two if it was the only one?
             {
-                this.checkList[objectName] = true;
-                this.truthCounter++;
+                suppliesChecklist[objectName] = true;
+                truthCounter++;
                 Debug.Log("truthCounter" + truthCounter);
 
                 gameUI.GetComponent<UIGame>().GoodAction();
@@ -98,10 +90,10 @@ public class TableChecker : MonoBehaviour
     {
         if(GameObject.Find(objectName).tag != "Player")
         {
-            if(this.checkList.ContainsKey(objectName) && this.checkList[objectName] == true) // Turns checkmark off if currently correct item is removed from table
+            if(suppliesChecklist.ContainsKey(objectName) && suppliesChecklist[objectName] == true) // Turns checkmark off if currently correct item is removed from table
             {
-                this.checkList[objectName] = false;
-                this.truthCounter--;
+                suppliesChecklist[objectName] = false;
+                truthCounter--;
                 gameUI.GetComponent<UIGame>().RemovePoint();
                 Debug.Log("truthCounter" + truthCounter);
             }
@@ -111,12 +103,9 @@ public class TableChecker : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if(this.handsSoaped && this.handsRinsed && this.handsDried)
-        //then player is code side allowed to place objects on the table\
-
         if (other.tag != "Player")
         {
-            if (this.sinkSteps)
+            if (sinkSteps)
             {
                 
                 Debug.Log(other.name);
@@ -124,12 +113,15 @@ public class TableChecker : MonoBehaviour
 
                 GameObject.Find(other.gameObject.name + ".").GetComponent<Image>().enabled = true; // Turn unique checkbox on
 
-                if (this.truthCounter == this.checkList.Count)
+                if (truthCounter == suppliesChecklist.Count)
                 {
                     GameObject.Find("NewDoor").GetComponent<DoorMover>().OpenDoor();
                     
                     Party.GetComponent<AudioSource>().Play(); //Activates partyMachine
                     Party.GetComponent<ParticleSystem>().Play();
+
+                    PlayerData PD = gameManager.GetComponent<PlayerData>();
+                    PD.supplyRoom_ChecklistComplete = true;
                 }
 
             }
@@ -153,7 +145,7 @@ public class TableChecker : MonoBehaviour
 
     private void OnTriggerExit(Collider other)      //removes items from list when they are taken off of the table
     {
-        if (this.checkList.ContainsKey(other.name) && this.checkList[other.name] == true)
+        if (suppliesChecklist.ContainsKey(other.name) && suppliesChecklist[other.name] == true)
         {
             GameObject.Find(other.gameObject.name + ".").GetComponent<Image>().enabled = false; //turn off check box
             RemoveFromTable(other.name);

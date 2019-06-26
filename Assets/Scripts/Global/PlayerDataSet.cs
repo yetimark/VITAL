@@ -5,12 +5,18 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerDataSet
 {
-    public string roomName;
+    //Game Data
     public string difficulty;
+    public int maxStrikes;
+    //Player Data
     public int playerStrikes;
     public int playerPoints;
 
-    public bool supplyRoom;
-    public bool medRoom;
-    public bool skillsRoom;
+    //Supply Room Data
+    public bool supplyRoom_ChecklistComplete;
+
+    //Completion Data
+    public bool supplyRoom_Completion;
+    public bool medRoom_Completion;
+    public bool skillsRoom_Completion;
 }

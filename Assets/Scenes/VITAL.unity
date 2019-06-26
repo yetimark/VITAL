@@ -17329,7 +17329,7 @@ GameObject:
   - component: {fileID: 366176574}
   m_Layer: 5
   m_Name: Game UI
-  m_TagString: Untagged
+  m_TagString: Game UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18163,6 +18163,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 594278080}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &396996962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396996964}
+  - component: {fileID: 396996963}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &396996963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396996962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523a630a3eeb79f43ad9e09dcd911389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 
+  maxStrikes: 0
+  playerStrikes: 0
+  playerPoints: 0
+  supplyRoom_ChecklistComplete: 0
+  supplyRoom_Completion: 0
+  medRoom_Completion: 0
+  skillsRoom_Completion: 0
+  saveData:
+    difficulty: 
+    maxStrikes: 0
+    playerStrikes: 0
+    playerPoints: 0
+    supplyRoom_ChecklistComplete: 0
+    supplyRoom_Completion: 0
+    medRoom_Completion: 0
+    skillsRoom_Completion: 0
+--- !u!4 &396996964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396996962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -54.923256, y: 19.087667, z: 21.721207}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &397370930
 GameObject:
@@ -25980,8 +26040,9 @@ GameObject:
   - component: {fileID: 657611934}
   - component: {fileID: 657611933}
   - component: {fileID: 657611932}
+  - component: {fileID: 657611935}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: SceneSwitcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26059,6 +26120,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657611930}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &657611935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657611930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c897fc4819e637a4f877f3d42e6bc3df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &658390154
 GameObject:
   m_ObjectHideFlags: 0
@@ -66434,7 +66507,7 @@ GameObject:
   - component: {fileID: 1671912431}
   m_Layer: 0
   m_Name: lobbyMusic
-  m_TagString: Untagged
+  m_TagString: LobbyMusic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76177,7 +76250,7 @@ GameObject:
   - component: {fileID: 1953429253}
   m_Layer: 5
   m_Name: easyMusic
-  m_TagString: Untagged
+  m_TagString: EasyMusic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80551,7 +80624,7 @@ GameObject:
   - component: {fileID: 2102281170}
   m_Layer: 5
   m_Name: PointNum
-  m_TagString: Strikes
+  m_TagString: Points
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
