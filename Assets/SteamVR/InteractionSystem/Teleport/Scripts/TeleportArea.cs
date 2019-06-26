@@ -39,9 +39,9 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		public void Start()
 		{
-			visibleTintColor = Teleport.instance.areaVisibleMaterial.GetColor( tintColorId );
-			highlightedTintColor = Teleport.instance.areaHighlightedMaterial.GetColor( tintColorId );
-			lockedTintColor = Teleport.instance.areaLockedMaterial.GetColor( tintColorId );
+			visibleTintColor = Teleport.instance.areaVisibleMaterial.color = Shader.GetGlobalColor("_Color");//.GetColor( tintColorId );
+            highlightedTintColor = Teleport.instance.areaHighlightedMaterial.color = Shader.GetGlobalColor("_Color"); //.GetColor( tintColorId );
+			lockedTintColor = Teleport.instance.areaLockedMaterial.color = Shader.GetGlobalColor("_Color");//.GetColor( tintColorId );
 		}
 
 

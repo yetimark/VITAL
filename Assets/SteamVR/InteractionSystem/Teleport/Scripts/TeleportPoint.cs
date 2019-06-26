@@ -233,7 +233,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		public void GetRelevantComponents()
 		{
-			markerMesh = transform.Find( "teleport_marker_mesh" ).GetComponent<MeshRenderer>();
+            markerMesh = transform.Find( "teleport_marker_mesh" ).GetComponent<MeshRenderer>();
 			switchSceneIcon = transform.Find( "teleport_marker_lookat_joint/teleport_marker_icons/switch_scenes_icon" ).GetComponent<MeshRenderer>();
 			moveLocationIcon = transform.Find( "teleport_marker_lookat_joint/teleport_marker_icons/move_location_icon" ).GetComponent<MeshRenderer>();
 			lockedIcon = transform.Find( "teleport_marker_lookat_joint/teleport_marker_icons/locked_icon" ).GetComponent<MeshRenderer>();

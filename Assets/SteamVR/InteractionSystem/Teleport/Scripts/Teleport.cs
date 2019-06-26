@@ -478,7 +478,7 @@ namespace Valve.VR.InteractionSystem
 			onDeactivateObjectTransform.position = pointerEnd;
 			offsetReticleTransform.position = pointerEnd - playerFeetOffset;
 
-			reticleAudioSource.transform.position = pointedAtPosition;
+			//reticleAudioSource.transform.position = pointedAtPosition;
 
 			pointerLineRenderer.SetPosition( 0, pointerStart );
 			pointerLineRenderer.SetPosition( 1, pointerEnd );
