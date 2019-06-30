@@ -30,6 +30,7 @@ public class DifficultyButtons : MonoBehaviour
 
         PlayerData PD = gameManager.GetComponent<PlayerData>();
         PD.difficulty = "Easy";
+        Debug.Log("Difficulty is: " + PD.difficulty);
         PD.Save();
         SceneManager.LoadScene("SupplyRoom"); 
     }

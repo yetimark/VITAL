@@ -14,7 +14,7 @@ public class SupplyRoom : MonoBehaviour
     public void Awake()
     {
         gameManager = GameObject.Find("GameManager");
-        timer = GameObject.Find("Timer");
+        timer = GameObject.FindGameObjectWithTag("Timer");
 
         //Where music is located within the scene
         easyMusic = GameObject.FindGameObjectWithTag("EasyMusic");
@@ -29,12 +29,13 @@ public class SupplyRoom : MonoBehaviour
         Timer timerObject = timer.GetComponent<Timer>();
         PD.Load();
 
-        if (PD.difficulty == "Easy")
+        if (PD.difficulty == "Hard")
         {
-            easyMusic.GetComponent<AudioSource>().Play();
-            StartCoroutine(timerObject.CountdownStart(timerObject.minutes = 3,
+            hardMusic.GetComponent<AudioSource>().Play();
+            StartCoroutine(timerObject.CountdownStart(timerObject.minutes = 1,
                                                       timerObject.seconds = 0,
-                                                      timerObject.difficulty = "Easy"));
+                                                      timerObject.difficulty = "Hard"));
+            PD.maxStrikes = 2;
         }
         else if (PD.difficulty == "Medium")
         {
@@ -44,14 +45,12 @@ public class SupplyRoom : MonoBehaviour
                                                       timerObject.difficulty = "Medium"));
             PD.maxStrikes = 4;
         }
-        else //The default is Hard Difficulty
+        else //The default is Easy Difficulty
         {
-            hardMusic.GetComponent<AudioSource>().Play();
-
-            StartCoroutine(timerObject.CountdownStart(timerObject.minutes = 1,
+            easyMusic.GetComponent<AudioSource>().Play();
+            StartCoroutine(timerObject.CountdownStart(timerObject.minutes = 3,
                                                       timerObject.seconds = 0,
-                                                      timerObject.difficulty = "Hard"));
-            PD.maxStrikes = 2;
+                                                      timerObject.difficulty = "Easy"));
         }
     }
     

@@ -21,6 +21,11 @@ public class ToScoreRoom : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        canUpdate = true;
+        if (PD.supplyRoom_ChecklistComplete)
+        {
+            PD.supplyRoom_Completion = true;
+            PD.Save();
+            SceneManager.LoadScene("ScoreRoom");
+        }
     }
 }
