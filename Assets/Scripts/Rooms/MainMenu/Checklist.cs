@@ -7,6 +7,9 @@ public class Checklist : MonoBehaviour
     private GameObject gameManager;
     private PlayerData PD;
 
+    private GameObject[] checklist;
+    private bool itemFound = false;
+
     // Full list of objects 
     public GameObject dressingChangeKit;
     public GameObject faceMask;
@@ -36,13 +39,38 @@ public class Checklist : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         PD = gameManager.GetComponent<PlayerData>();
+
         if (PD.skill == "PiccLine") { CreateList_PiccLine(); }
 
-        GameObject[] checklist = new GameObject[] { dressingChangeKit, faceMask, securementDevice, sterile4x4, sterileDrape,
-                                                sterileGloves, tegaderm, alcoholWipes, biopatch, chux, cleanGloves,
-                                                secondaryIVTubing, ivExtensionSet, insulinSyringe, carpujectCartridge,
-                                                syringe_3cc, oneInchNeedle_23G, ivCatheter, ivStartKit, foleyCatheter,
-                                                incentiveSpirometer, primaryIVSet};
+        checklist = new GameObject[] { dressingChangeKit, faceMask, securementDevice, sterile4x4, sterileDrape,
+                                       sterileGloves, tegaderm, alcoholWipes, biopatch, chux, cleanGloves,
+                                       secondaryIVTubing, ivExtensionSet, insulinSyringe, carpujectCartridge,
+                                       syringe_3cc, oneInchNeedle_23G, ivCatheter, ivStartKit, foleyCatheter,
+                                       incentiveSpirometer, primaryIVSet};
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag != "Player")
+        {
+            foreach (GameObject item in checklist)
+            {
+                if (item.name == other.name)
+                {
+                    itemFound = true;
+
+                }    
+            
+
+                    //gameUI.GetComponent<UIGame>().GoodAction();
+                
+                //else
+                //{
+                //    gameUI.GetComponent<UIGame>().BadAction();
+                //    GameObject.Find(objectName).GetComponent<boxReturn>().ReturnHome(); // return object to shelf
+                //}
+            }
+        }
     }
 
     public void CreateList_PiccLine() // Total 11 Items
