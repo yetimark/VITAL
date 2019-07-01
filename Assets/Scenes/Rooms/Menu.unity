@@ -888,6 +888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: 
+  skill: 
   maxStrikes: 0
   playerStrikes: 0
   playerPoints: 0
@@ -897,6 +898,7 @@ MonoBehaviour:
   skillsRoom_Completion: 0
   saveData:
     difficulty: 
+    skill: 
     maxStrikes: 0
     playerStrikes: 0
     playerPoints: 0

@@ -7,6 +7,7 @@ public class PlayerDataSet
 {
     //Game Data
     public string difficulty;
+    public string skill;
     public int maxStrikes;
     //Player Data
     public int playerStrikes;

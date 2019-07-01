@@ -5,27 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class ToScoreRoom : MonoBehaviour
 {
+    // This script is applied to the teleport box outside of the SupplyRoom door.
+    // Once the Player touches the Teleport Pad, it checks to see if the SupplyRoom checklist has been completed.
+
     private GameObject gameManager;
-    private bool canUpdate = false;
-    private PlayerData PD = null;
+    private PlayerData PD;
 
-    public void Update()
+    public void Start()
     {
-        if (PD == null) { PD = gameManager.GetComponent<PlayerData>(); }
-
-        if (canUpdate && PD.supplyRoom_ChecklistComplete) {
-            PD.supplyRoom_Completion = true;
-            PD.Save();
-            SceneManager.LoadScene("ScoreRoom");
-        }
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        PD = gameManager.GetComponent<PlayerData>();
     }
+
     public void OnTriggerEnter(Collider other)
     {
-        if (PD.supplyRoom_ChecklistComplete)
+        if (other.tag == "Player")
         {
-            PD.supplyRoom_Completion = true;
-            PD.Save();
-            SceneManager.LoadScene("ScoreRoom");
+            if (PD.supplyRoom_ChecklistComplete)
+            {
+                PD.supplyRoom_Completion = true;
+                PD.Save();
+                SceneManager.LoadScene("ScoreRoom");
+            }
         }
     }
 }

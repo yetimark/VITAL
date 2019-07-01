@@ -11,11 +11,13 @@ public class DifficultyButtons : MonoBehaviour
     private GameObject lobbyMusic;
 
     private GameObject gameManager;
+    private PlayerData PD;
 
     public void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         lobbyMusic = GameObject.FindGameObjectWithTag("LobbyMusic");
+        PD = gameManager.GetComponent<PlayerData>();
     }
     public void Start()
     {
@@ -28,8 +30,8 @@ public class DifficultyButtons : MonoBehaviour
         Debug.Log("Easy Button pressed");
         lobbyMusic.GetComponent<AudioSource>().Stop();
 
-        PlayerData PD = gameManager.GetComponent<PlayerData>();
         PD.difficulty = "Easy";
+        PD.skill = "PiccLine";
         Debug.Log("Difficulty is: " + PD.difficulty);
         PD.Save();
         SceneManager.LoadScene("SupplyRoom"); 
@@ -39,8 +41,8 @@ public class DifficultyButtons : MonoBehaviour
         Debug.Log("Medium Button pressed");
         lobbyMusic.GetComponent<AudioSource>().Stop();
 
-        PlayerData PD = gameManager.GetComponent<PlayerData>();
         PD.difficulty = "Medium";
+        PD.skill = "PiccLine";
         PD.maxStrikes = 4;
         PD.Save();
         SceneManager.LoadScene("SupplyRoom");
@@ -50,8 +52,8 @@ public class DifficultyButtons : MonoBehaviour
         Debug.Log("Hard Button pressed");
         lobbyMusic.GetComponent<AudioSource>().Stop();
 
-        PlayerData PD = gameManager.GetComponent<PlayerData>();
         PD.difficulty = "Hard";
+        PD.skill = "PiccLine";
         PD.maxStrikes = 2;
         PD.Save();
         SceneManager.LoadScene("SupplyRoom");

@@ -36282,6 +36282,71 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212352969}
   m_Mesh: {fileID: 4300036, guid: 0b238abe4f477d74894fb58c0381bb56, type: 3}
+--- !u!1 &1216666907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1216666909}
+  - component: {fileID: 1216666908}
+  m_Layer: 0
+  m_Name: Checklist
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1216666908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216666907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16094654f0c0964fb25592fb1d1c878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dressingChangeKit: {fileID: 1653934223}
+  faceMask: {fileID: 1135563050}
+  securementDevice: {fileID: 2120471142}
+  sterile4x4: {fileID: 1509738662}
+  sterileDrape: {fileID: 1982253488}
+  sterileGloves: {fileID: 88709097}
+  tegaderm: {fileID: 1387598367}
+  alcoholWipes: {fileID: 1532716548}
+  biopatch: {fileID: 1873546714}
+  chux: {fileID: 1993315265}
+  cleanGloves: {fileID: 265229183}
+  secondaryIVTubing: {fileID: 1485068209}
+  ivExtensionSet: {fileID: 1585505034}
+  insulinSyringe: {fileID: 1146085596}
+  carpujectCartridge: {fileID: 1788458416}
+  syringe_3cc: {fileID: 1537653658}
+  oneInchNeedle_23G: {fileID: 1537988359}
+  ivCatheter: {fileID: 1500672730}
+  ivStartKit: {fileID: 746176437}
+  foleyCatheter: {fileID: 822666792}
+  incentiveSpirometer: {fileID: 502355544}
+  primaryIVSet: {fileID: 1611980877}
+--- !u!4 &1216666909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216666907}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -54.84, y: 35.46, z: 21.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1220078054
 GameObject:
   m_ObjectHideFlags: 0

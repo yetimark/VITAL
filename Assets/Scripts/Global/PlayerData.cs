@@ -6,9 +6,13 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    //This class holds session data, and loads/saves to the saved data set
+    // This class holds session data, and loads/saves to the saved data set
+    // Every time a new piece of data needs to be saved, it needs to be added as a Declaration in both PlayerData and PlayerDataSet, in Save() and in Load()
+
+
     //GameStats
     public string difficulty;
+    public string skill; 
     public int maxStrikes;
 
     //PlayerStats
@@ -32,10 +36,11 @@ public class PlayerData : MonoBehaviour
         Load();
     }
 
-    //saves data to file
+    // Saves data to file
     public void Save()
     {
         saveData.difficulty = difficulty;
+        saveData.skill = skill;
         saveData.maxStrikes = maxStrikes;
 
         saveData.playerStrikes = playerStrikes;
@@ -77,6 +82,7 @@ public class PlayerData : MonoBehaviour
         file.Close();
 
         difficulty = saveData.difficulty;
+        skill = saveData.skill;
         maxStrikes = saveData.maxStrikes;
 
         playerStrikes = saveData.playerStrikes;
@@ -94,6 +100,7 @@ public class PlayerData : MonoBehaviour
     public void GenerateDefaults()
     {
         difficulty = null;
+        skill = null;
         maxStrikes = 0;
 
         playerStrikes = 0;

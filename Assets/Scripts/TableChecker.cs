@@ -8,9 +8,11 @@ using UnityEngine.UI;
 public class TableChecker : MonoBehaviour
 {
     private GameObject gameManager;
+    private PlayerData PD;
 
     // Dictionary of objects needed for skill as keyword with a bool to stating if it is on the table already or not
     private Dictionary<string, bool> suppliesChecklist = new Dictionary<string, bool>();
+
     private int truthCounter;
 
     public GameObject checklistPanel;
@@ -49,7 +51,7 @@ public class TableChecker : MonoBehaviour
         suppliesChecklist.Add("Clean Gloves", false);
         Debug.Log("PiccLine Checklist Created");
     }
-
+   
     void Start()
     {
         checklistPanel.SetActive(panelOn); // Change true or false depending upon simulation difficulty
@@ -57,7 +59,7 @@ public class TableChecker : MonoBehaviour
 
         if (panelOn) // Should be activated on button press for difficulty
         {
-            foreach (string itemName in suppliesChecklist.Keys)      //#FIXME:    piccLine should change upon skill selection
+            foreach (string itemName in suppliesChecklist.Keys)
             {
                 GameObject.Find(itemName + ".").GetComponent<Image>().enabled = false;
             }
@@ -75,7 +77,7 @@ public class TableChecker : MonoBehaviour
                 suppliesChecklist[objectName] = true;
                 truthCounter++;
                 Debug.Log("truthCounter" + truthCounter);
-
+                 
                 gameUI.GetComponent<UIGame>().GoodAction();
             }
             else
