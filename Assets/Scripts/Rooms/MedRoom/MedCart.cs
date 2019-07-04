@@ -78,7 +78,7 @@ public class MedCart : MonoBehaviour
                 if (numCorrect == totalPossible)
                 {
                     spawnItem();
-                    drawer.GetComponent<Animator>().Play("", 0);
+                    drawer.GetComponent<Animator>().Play("Drawer", 0);
                 }
             }
         }
