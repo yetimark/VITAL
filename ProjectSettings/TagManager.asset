@@ -55,6 +55,8 @@ TagManager:
   - MedButtonTwo
   - MedButtonThree
   - MedButtonFour
+  - MedUIOne
+  - MedUITwo
   layers:
   - Default
   - TransparentFX
