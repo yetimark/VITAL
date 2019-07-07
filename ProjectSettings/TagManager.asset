@@ -4,18 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ===.Main.===
   - Menu
   - Supplies
   - Timer
   - Table
   - Clock
   - Spawn
+  - PaperTowel
   - Warning
   - Strikes
   - Party
   - lobbyMusic
   - projectile
+  - FxTemporaire
   - PiccLine
   - 'IVInitiation '
   - GameManager
@@ -25,16 +26,7 @@ TagManager:
   - LobbyMusic
   - Points
   - Game UI
-  - ===.MedUI.===
-  - MedButtonOne
-  - MedButtonTwo
-  - MedButtonThree
-  - MedButtonFour
-  - MedUIOne
-  - MedUITwo
-  - MedUIThree
-  - MedUIFour
-  - ===.VRUIAsset.===
+  - FakeTowel
   - VRUIIcon
   - VRUIButtonList
   - VRUIText
@@ -47,7 +39,6 @@ TagManager:
   - VRUISlider
   - VRUIButtonTab
   - VRUIToggle
-  - ===.ItemNumberingSystem.===
   - -1
   - 0
   - 1
@@ -60,6 +51,10 @@ TagManager:
   - 8
   - 9
   - 10
+  - MedButtonOne
+  - MedButtonTwo
+  - MedButtonThree
+  - MedButtonFour
   layers:
   - Default
   - TransparentFX
