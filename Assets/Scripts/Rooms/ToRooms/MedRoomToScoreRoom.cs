@@ -21,7 +21,8 @@ public class MedRoomToScoreRoom : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (PD.medRoom_ChecklistComplete)
+            //if (PD.medRoom_ChecklistComplete) Disabled for testing
+            if (true)
             {
                 PD.medRoom_Completion = true;
                 PD.Save();
