@@ -34,7 +34,7 @@ public class MedCart : MonoBehaviour
         // Then, the answerList would correspond to the correct order of which to obtain the item.
 
         if (item == "ITEMNAME")
-        //if (true)
+        //if (true) // Used for testing
         {
             itemGO = GameObject.FindGameObjectWithTag("ITEMNAME");
             answerList = new List<int>() {1,2,3,4};

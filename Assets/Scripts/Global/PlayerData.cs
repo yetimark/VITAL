@@ -9,7 +9,6 @@ public class PlayerData : MonoBehaviour
     // This class holds session data, and loads/saves to the saved data set
     // Every time a new piece of data needs to be saved, it needs to be added as a Declaration in both PlayerData and PlayerDataSet, in Save() and in Load()
 
-
     // GameStats
     public string difficulty;
     public string skill; 
@@ -23,6 +22,7 @@ public class PlayerData : MonoBehaviour
     public bool supplyRoom_ChecklistComplete;
 
     // Medication Room Data
+    public bool medRoom_ChecklistComplete;
     public List<int> playerResponses_MedCart;
 
     // CompletedRooms
@@ -55,6 +55,7 @@ public class PlayerData : MonoBehaviour
         saveData.supplyRoom_ChecklistComplete = supplyRoom_ChecklistComplete;
 
         // Medication Room Data
+        saveData.medRoom_ChecklistComplete = medRoom_ChecklistComplete;
         saveData.playerResponses_MedCart = playerResponses_MedCart;
 
         // Completed Rooms
@@ -104,6 +105,7 @@ public class PlayerData : MonoBehaviour
         supplyRoom_ChecklistComplete = saveData.supplyRoom_ChecklistComplete;
 
         // Medication Room Data
+        medRoom_ChecklistComplete = saveData.medRoom_ChecklistComplete;
         playerResponses_MedCart = saveData.playerResponses_MedCart;
 
         // Room Completion Data
@@ -129,6 +131,7 @@ public class PlayerData : MonoBehaviour
         supplyRoom_ChecklistComplete = false;
 
         // Medication Room Data
+        medRoom_ChecklistComplete = false;
         playerResponses_MedCart = new List<int> {0,0,0,0};
 
         // Room Completion Data

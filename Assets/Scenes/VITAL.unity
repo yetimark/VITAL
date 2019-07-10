@@ -18595,6 +18595,7 @@ GameObject:
   - component: {fileID: 396996964}
   - component: {fileID: 396996963}
   - component: {fileID: 396996965}
+  - component: {fileID: 396996966}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -18620,6 +18621,7 @@ MonoBehaviour:
   playerStrikes: 0
   playerPoints: 0
   supplyRoom_ChecklistComplete: 0
+  medRoom_ChecklistComplete: 0
   playerResponses_MedCart: 
   supplyRoom_Completion: 0
   medRoom_Completion: 0
@@ -18631,6 +18633,7 @@ MonoBehaviour:
     playerStrikes: 0
     playerPoints: 0
     supplyRoom_ChecklistComplete: 0
+    medRoom_ChecklistComplete: 0
     playerResponses_MedCart: 
     supplyRoom_Completion: 0
     medRoom_Completion: 0
@@ -18659,6 +18662,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 635453bb49d4aef4c9b2d85dd68d1c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &396996966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396996962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e59849dfcc101746a4092fd42cbb31a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &397370930
