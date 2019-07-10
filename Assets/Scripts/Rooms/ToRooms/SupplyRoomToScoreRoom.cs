@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ToScoreRoom : MonoBehaviour
+public class SupplyRoomToScoreRoom : MonoBehaviour
 {
     // This script is applied to the teleport box outside of the SupplyRoom door.
     // Once the Player touches the Teleport Pad, it checks to see if the SupplyRoom checklist has been completed.

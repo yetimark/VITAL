@@ -5,29 +5,37 @@ using UnityEngine;
 public class SupplyRoom : MonoBehaviour
 {
     private GameObject gameManager;
+    private PlayerData PD;
 
+    private GameObject player;
+    private GameObject playerSpawnpoint;
     private GameObject timer;
+
     private GameObject easyMusic;
     private GameObject mediumMusic;
     private GameObject hardMusic;
 
     public void Awake()
     {
-        gameManager = GameObject.Find("GameManager");
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        playerSpawnpoint = GameObject.Find("Spawnpoint");
         timer = GameObject.FindGameObjectWithTag("Timer");
+        player = GameObject.FindGameObjectWithTag("Player");
 
-        //Where music is located within the scene
+        // Where music is located within the scene
         easyMusic = GameObject.FindGameObjectWithTag("EasyMusic");
         mediumMusic = GameObject.FindGameObjectWithTag("MediumMusic");
         hardMusic = GameObject.FindGameObjectWithTag("HardMusic");
-
     }
 
     public void Start()
     {
-        PlayerData PD = gameManager.GetComponent<PlayerData>();
         Timer timerObject = timer.GetComponent<Timer>();
+        PD = gameManager.GetComponent<PlayerData>();
         PD.Load();
+
+        // Teleports player to center of room
+        player.transform.position = playerSpawnpoint.transform.position;
 
         if (PD.difficulty == "Hard")
         {

@@ -26,15 +26,9 @@ public class MedCart : MonoBehaviour
     }
 
     public void buildAnswerList()
-    {
-        // If item == "ITEMNAME" then the 
-        
-        // Currently this is based on a per-skill basis. I think this should change to a per-ITEM basis.
-        // AKA: Player selects a 2cc syringe of X medication. The *if statement* would check for that specific ITEM request.
-        // Then, the answerList would correspond to the correct order of which to obtain the item.
-
+    {   
         if (item == "ITEMNAME")
-        //if (true)
+        //if (true) // Used for testing
         {
             itemGO = GameObject.FindGameObjectWithTag("ITEMNAME");
             answerList = new List<int>() {1,2,3,4};

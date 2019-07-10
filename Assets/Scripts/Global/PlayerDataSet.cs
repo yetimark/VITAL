@@ -17,6 +17,7 @@ public class PlayerDataSet
     public bool supplyRoom_ChecklistComplete;
 
     // Medication Room Data
+    public bool medRoom_ChecklistComplete;
     public List<int> playerResponses_MedCart;
 
     // Room Completion Data
