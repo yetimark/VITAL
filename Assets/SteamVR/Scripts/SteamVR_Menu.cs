@@ -175,6 +175,7 @@ public class SteamVR_Menu : MonoBehaviour
 			tracker.wireframe = GUILayout.Toggle(tracker.wireframe, "Wireframe");
 
 			var render = SteamVR_Render.instance;
+            
 			if (render.trackingSpace == ETrackingUniverseOrigin.TrackingUniverseSeated)
 			{
 				if (GUILayout.Button("Switch to Standing"))
@@ -317,11 +318,11 @@ public class SteamVR_Menu : MonoBehaviour
 			tracker.origin.localScale = new Vector3(scale, scale, scale);
 	}
 
-	//void SaveCursorState()
-	//{
-	//	savedCursorVisible = Cursor.visible;
-	//	savedCursorLockState = Cursor.lockState;
-	//}
+	void SaveCursorState()
+	{
+		savedCursorVisible = Cursor.visible;
+		savedCursorLockState = Cursor.lockState;
+	}
 
 	void RestoreCursorState()
 	{
