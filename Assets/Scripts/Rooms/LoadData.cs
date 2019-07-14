@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoadRoom : MonoBehaviour
+public class LoadData : MonoBehaviour
 {
     private GameObject gameManager;
     private PlayerData PD;
@@ -14,15 +14,13 @@ public class LoadRoom : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         PD = gameManager.GetComponent<PlayerData>();
+        PD.Load();
 
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void Start()
     {
-        PD = gameManager.GetComponent<PlayerData>();
-        PD.Load();
-
         player.transform.position = spawnpoint.transform.position;
     }
 }

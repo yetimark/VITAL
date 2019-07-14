@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class DifficultyButtons : MonoBehaviour
 {
     public GameObject player;
-    public GameObject spawn;
 
     private GameObject lobbyMusic;
 
@@ -29,11 +28,9 @@ public class DifficultyButtons : MonoBehaviour
     {
         Debug.Log("Easy Button pressed");
         lobbyMusic.GetComponent<AudioSource>().Stop();
-
         PD.difficulty = "Easy";
-        PD.skill = "PiccLine";
-        Debug.Log("Difficulty is: " + PD.difficulty);
         PD.Save();
+
         SceneManager.LoadScene("SupplyRoom"); 
     }
     public void MediumButton()
@@ -42,9 +39,9 @@ public class DifficultyButtons : MonoBehaviour
         lobbyMusic.GetComponent<AudioSource>().Stop();
 
         PD.difficulty = "Medium";
-        PD.skill = "PiccLine";
         PD.maxStrikes = 4;
         PD.Save();
+
         SceneManager.LoadScene("SupplyRoom");
     }
     public void HardButton()
@@ -53,9 +50,9 @@ public class DifficultyButtons : MonoBehaviour
         lobbyMusic.GetComponent<AudioSource>().Stop();
 
         PD.difficulty = "Hard";
-        PD.skill = "PiccLine";
         PD.maxStrikes = 2;
         PD.Save();
+
         SceneManager.LoadScene("SupplyRoom");
     }
 }
