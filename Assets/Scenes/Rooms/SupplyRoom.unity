@@ -655,6 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 20
 --- !u!23 &39127192
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1701,6 +1702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 6
 --- !u!23 &89092119
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2477,6 +2479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 26
 --- !u!23 &148117280
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3178,6 +3181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 12
 --- !u!23 &195976850
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8678,6 +8682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 8
 --- !u!23 &254498059
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9331,6 +9336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 13
 --- !u!23 &279890587
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9919,6 +9925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 1
 --- !u!23 &332849316
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10289,6 +10296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 25
 --- !u!23 &380557856
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10740,6 +10748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 17
 --- !u!23 &428195848
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12238,6 +12247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 21
 --- !u!23 &537178041
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12873,6 +12883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 11
 --- !u!23 &596709910
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13988,6 +13999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 19
 --- !u!23 &655419963
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14331,6 +14343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 2
 --- !u!23 &667876077
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14634,6 +14647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 0
 --- !u!1 &684395577
 GameObject:
   m_ObjectHideFlags: 0
@@ -16156,6 +16170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 24
 --- !u!23 &774879314
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17369,6 +17384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 22
 --- !u!23 &855104051
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17938,6 +17954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 14
 --- !u!23 &887514908
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19076,6 +19093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 5
 --- !u!23 &941273279
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19955,6 +19973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 23
 --- !u!23 &1046931275
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21033,97 +21052,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118865480}
   m_CullTransparentMesh: 0
---- !u!1 &1121078544
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1121078548}
-  - component: {fileID: 1121078547}
-  - component: {fileID: 1121078546}
-  - component: {fileID: 1121078545}
-  m_Layer: 0
-  m_Name: TestingPlane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1121078545
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121078544}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1121078546
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121078544}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: dbb27c18aa0025548bc21dcbed4bbebb, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1121078547
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121078544}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1121078548
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121078544}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -45.2, y: 27.11, z: 17.6}
-  m_LocalScale: {x: 25, y: 0.01, z: 25}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1125226999
 GameObject:
   m_ObjectHideFlags: 0
@@ -22514,6 +22442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 15
 --- !u!23 &1186873650
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23231,7 +23160,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1220078054
 GameObject:
@@ -23551,7 +23480,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1230808970
 GameObject:
@@ -30042,6 +29971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 3
 --- !u!23 &1351846804
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33582,6 +33512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 4
 --- !u!23 &1519254126
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40217,6 +40148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 9
 --- !u!23 &1834604355
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40604,6 +40536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 16
 --- !u!23 &1851088196
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41404,6 +41337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 10
 --- !u!23 &1875209473
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41508,6 +41442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 7
 --- !u!23 &1881425327
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42048,6 +41983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 27
 --- !u!23 &1939157715
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45209,6 +45145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b9190dd8b0de249887b2a0f0648649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SupplyLocationID: 18
 --- !u!23 &2143871280
 MeshRenderer:
   m_ObjectHideFlags: 0

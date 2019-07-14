@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SupplyLocationID : MonoBehaviour
+public class SupplyLocations : MonoBehaviour
 {
+    // The ID associated with each shelf location
     public int SupplyLocationID;
 }
