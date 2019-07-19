@@ -9,6 +9,34 @@ TagManager:
   - DifficultySelection
   - SkillSelection
   - LobbyMusic
+  - VRUIIcon
+  - VRUIButtonList
+  - VRUIText
+  - VRUIBackground
+  - VRUIButton
+  - VRUIButtonControlBar
+  - Supplies
+  - VRUIRadio
+  - VRUIOutline
+  - VRUICheckbox
+  - projectile
+  - FxTemporaire
+  - VRUISlider
+  - FakeTowel
+  - VRUIButtonTab
+  - VRUIToggle
+  - EasyMusic
+  - Warning
+  - PiccLine
+  - Table
+  - Strikes
+  - Game UI
+  - Timer
+  - Clock
+  - Party
+  - Points
+  - ScoreUI_Mistakes
+  - ScoreUI_Points
   layers:
   - Default
   - TransparentFX

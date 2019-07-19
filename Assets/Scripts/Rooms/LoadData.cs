@@ -7,6 +7,7 @@ public class LoadData : MonoBehaviour
     private GameObject gameManager;
     private PlayerData PD;
 
+    private GameObject strikesUI;
     private GameObject player;
     public GameObject spawnpoint;
 
