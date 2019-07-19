@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class DifficultyButtons : MonoBehaviour
 {
     public GameObject player;
-
-    private GameObject lobbyMusic;
+    public GameObject lobbyMusic;
 
     private GameObject gameManager;
     private PlayerData PD;
@@ -15,7 +14,6 @@ public class DifficultyButtons : MonoBehaviour
     public void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
-        lobbyMusic = GameObject.FindGameObjectWithTag("LobbyMusic");
         PD = gameManager.GetComponent<PlayerData>();
     }
     public void Start()

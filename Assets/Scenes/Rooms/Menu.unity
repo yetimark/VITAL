@@ -289,7 +289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &27352703
 Transform:
   m_ObjectHideFlags: 0
@@ -584,6 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1835835879}
+  lobbyMusic: {fileID: 1380607223}
 --- !u!114 &180184144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,18 +624,7 @@ MonoBehaviour:
       PublicKeyToken=null
   onButtonIsPressed:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 05603612e4116254da75c9e509959797, type: 3}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   engaged: 0
@@ -725,7 +715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7
+      value: -5.228
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1778,6 +1768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1835835879}
+  lobbyMusic: {fileID: 1380607223}
 --- !u!114 &568543726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2063,6 +2054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  lobbyMusic: {fileID: 0}
 --- !u!114 &623790078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4234,12 +4226,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380607223}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.25, y: -0.33076948, z: 5.4299984}
+  m_LocalScale: {x: 1, y: 0.7692308, z: 1}
   m_Children: []
-  m_Father: {fileID: 1597588858}
-  m_RootOrder: 2
+  m_Father: {fileID: 1632060988}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1380607225
 AudioSource:
@@ -4510,6 +4502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1835835879}
+  lobbyMusic: {fileID: 1380607223}
 --- !u!114 &1464232888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5054,7 +5047,6 @@ Transform:
   m_Children:
   - {fileID: 27352703}
   - {fileID: 152983704}
-  - {fileID: 1380607224}
   m_Father: {fileID: 1632060988}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5148,6 +5140,7 @@ Transform:
   - {fileID: 1597588858}
   - {fileID: 1464005242}
   - {fileID: 1363519193}
+  - {fileID: 1380607224}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
