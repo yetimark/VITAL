@@ -8,6 +8,7 @@ public class LoadData : MonoBehaviour
     private PlayerData PD;
 
     private GameObject player;
+
     public GameObject spawnpoint;
 
     public void Awake()

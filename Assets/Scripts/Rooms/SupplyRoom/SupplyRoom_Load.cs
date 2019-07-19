@@ -2,7 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SupplyRoom : MonoBehaviour
+/*  ============ Loading up Supply Room =============
+ *  This is the main start-up script for the Supply Room. 
+ *  The steps that occur are as follows: 
+ *      1. All needed GameObjects are located and assigned to their appropriate variables.
+ *      2. Game data is loaded in from the save file.
+ *      3. The currLevel and nextLevel are set. This is important for when the player moves into the Score Room 
+ *         (after completing or committing too many mistakes).
+ *      4. The selected difficulty's values are assigned.
+ *  
+ *  ~Written by Austin Winkler
+ *  ================================================= */
+
+public class SupplyRoom_Load : MonoBehaviour
 {
     private GameObject gameManager;
     private PlayerData PD;
@@ -15,7 +27,7 @@ public class SupplyRoom : MonoBehaviour
     private GameObject mediumMusic;
     private GameObject hardMusic;
 
-    public void Awake()
+    public void Awake() // #1
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         playerSpawnpoint = GameObject.Find("Spawnpoint");
@@ -32,12 +44,14 @@ public class SupplyRoom : MonoBehaviour
     {
         Timer timerObject = timer.GetComponent<Timer>();
         PD = gameManager.GetComponent<PlayerData>();
-        PD.Load();
+        PD.Load(); // #2
 
-        // Teleports player to center of room
-        player.transform.position = playerSpawnpoint.transform.position;
+        PD.currLevel = "SupplyRoom"; // #3 - The level that the player is currently loading into
+        PD.nextLevel = "MedRoom";    // #3 - The level that will come after the current level
 
-        if (PD.difficulty == "Hard")
+        player.transform.position = playerSpawnpoint.transform.position; // Teleports player to center of room
+
+        if (PD.difficulty == "Hard") // #4
         {
             hardMusic.GetComponent<AudioSource>().Play();
             StartCoroutine(timerObject.CountdownStart(timerObject.minutes = 1,
@@ -45,7 +59,7 @@ public class SupplyRoom : MonoBehaviour
                                                       timerObject.difficulty = "Hard"));
             PD.maxStrikes = 2;
         }
-        else if (PD.difficulty == "Medium")
+        else if (PD.difficulty == "Medium") // #4
         {
             mediumMusic.GetComponent<AudioSource>().Play();
             StartCoroutine(timerObject.CountdownStart(timerObject.minutes = 1,
@@ -53,7 +67,7 @@ public class SupplyRoom : MonoBehaviour
                                                       timerObject.difficulty = "Medium"));
             PD.maxStrikes = 4;
         }
-        else //The default is Easy Difficulty
+        else // #4 - Easy is the default difficulty
         {
             easyMusic.GetComponent<AudioSource>().Play();
             StartCoroutine(timerObject.CountdownStart(timerObject.minutes = 3,
@@ -61,5 +75,4 @@ public class SupplyRoom : MonoBehaviour
                                                       timerObject.difficulty = "Easy"));
         }
     }
-    
 }

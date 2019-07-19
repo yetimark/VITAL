@@ -37,6 +37,8 @@ TagManager:
   - Points
   - ScoreUI_Mistakes
   - ScoreUI_Points
+  - ScoreUI_Retry
+  - ScoreUI_NextLevel
   layers:
   - Default
   - TransparentFX

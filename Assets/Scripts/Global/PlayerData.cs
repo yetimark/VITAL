@@ -11,7 +11,9 @@ public class PlayerData : MonoBehaviour
 
     // GameStats
     public string difficulty;
-    public string skill; 
+    public string skill;
+    public string currLevel;
+    public string nextLevel;
     public int maxStrikes;
 
     // PlayerStats
@@ -45,6 +47,8 @@ public class PlayerData : MonoBehaviour
         // GameStats
         saveData.difficulty = difficulty;
         saveData.skill = skill;
+        saveData.currLevel = currLevel;
+        saveData.nextLevel = nextLevel;
         saveData.maxStrikes = maxStrikes;
 
         // PlayerStats
@@ -95,6 +99,8 @@ public class PlayerData : MonoBehaviour
         // GameStats
         difficulty = saveData.difficulty;
         skill = saveData.skill;
+        currLevel = saveData.currLevel;
+        nextLevel = saveData.nextLevel;
         maxStrikes = saveData.maxStrikes;
 
         // PlayerStats
@@ -121,6 +127,8 @@ public class PlayerData : MonoBehaviour
         // GameStats
         difficulty = null;
         skill = null;
+        currLevel = null;
+        nextLevel = null;
         maxStrikes = 0;
 
         // PlayerStats
