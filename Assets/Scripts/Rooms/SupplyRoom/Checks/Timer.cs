@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -87,6 +88,9 @@ public class Timer : MonoBehaviour
                 if (this.minutes == 0)
                 {
                     this.display = "00:00";
+                    yield return new WaitForSeconds(8f);
+
+                    SceneManager.LoadScene("ScoreRoom");
                 }
                 else
                 {
@@ -98,6 +102,7 @@ public class Timer : MonoBehaviour
             {
                 this.seconds--;
             }
+            
         }
     }
 }

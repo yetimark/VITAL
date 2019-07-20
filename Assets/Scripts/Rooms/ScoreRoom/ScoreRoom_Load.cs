@@ -11,7 +11,7 @@ using UnityEngine.UI;
  *      3. If the Supply Room has not been completed successfully, the player will be unable to proceed to next level.
  *  
  *  ~Written by Austin Winkler
- *  ====================================== */
+ *  ================================================ */
 
 public class ScoreRoom_Load : MonoBehaviour
 {
@@ -38,10 +38,5 @@ public class ScoreRoom_Load : MonoBehaviour
     {
         strikes.text = PD.playerStrikes.ToString(); // #2
         points.text = PD.playerPoints.ToString();   // #2
-
-        if (!PD.supplyRoom_Completion) // #3
-        {
-            nextLevel.SetActive(false);
-        }
     }
 }
