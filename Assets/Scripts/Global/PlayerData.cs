@@ -136,11 +136,11 @@ public class PlayerData : MonoBehaviour
         skill = null;
         currLevel = null;
         nextLevel = null;
-        maxStrikes = 0;
+        maxStrikes = -1;
 
         // PlayerStats
-        playerStrikes = 0;
-        playerPoints = 0;
+        playerStrikes = -1;
+        playerPoints = -1;
 
         // Supply Room Data
         supplyRoom_ChecklistComplete = false;
