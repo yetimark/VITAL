@@ -28,7 +28,6 @@ public class DifficultyButtons : MonoBehaviour
         Debug.Log("Easy Button pressed");
         lobbyMusic.GetComponent<AudioSource>().Stop();
         PD.difficulty = "Easy";
-        PD.Save();
 
         SceneManager.LoadScene("SupplyRoom"); 
     }
@@ -40,7 +39,6 @@ public class DifficultyButtons : MonoBehaviour
 
         PD.difficulty = "Medium";
         PD.maxStrikes = 4;
-        PD.Save();
 
         SceneManager.LoadScene("SupplyRoom");
     }
@@ -52,7 +50,6 @@ public class DifficultyButtons : MonoBehaviour
 
         PD.difficulty = "Hard";
         PD.maxStrikes = 2;
-        PD.Save();
 
         SceneManager.LoadScene("SupplyRoom");
     }

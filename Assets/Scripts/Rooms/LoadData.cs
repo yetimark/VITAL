@@ -24,7 +24,7 @@ public class LoadData : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         PD = gameManager.GetComponent<PlayerData>();
-        PD.Load();
+        //PD.Load();
 
         player = GameObject.FindGameObjectWithTag("Player");
     }

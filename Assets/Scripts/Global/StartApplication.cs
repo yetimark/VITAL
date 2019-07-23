@@ -11,6 +11,5 @@ public class StartApplication : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         PD = gameManager.GetComponent<PlayerData>();
-        PD.Load();
     }
 }

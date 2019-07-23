@@ -25,7 +25,6 @@ public class MedRoomToScoreRoom : MonoBehaviour
             if (true)
             {
                 PD.medRoom_Completion = true;
-                PD.Save();
                 SceneManager.LoadScene("ScoreRoom");
             }
         }

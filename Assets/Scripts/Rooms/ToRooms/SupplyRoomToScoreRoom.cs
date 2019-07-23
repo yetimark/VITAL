@@ -24,7 +24,6 @@ public class SupplyRoomToScoreRoom : MonoBehaviour
             if (PD.supplyRoom_ChecklistComplete)
             {
                 PD.supplyRoom_Completion = true;
-                PD.Save();
                 SceneManager.LoadScene("ScoreRoom");
             }
         }

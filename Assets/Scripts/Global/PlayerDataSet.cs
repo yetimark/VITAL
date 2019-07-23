@@ -18,7 +18,7 @@ public class PlayerDataSet
 
     // Supply Room Data
     public bool supplyRoom_ChecklistComplete;
-    public List<GameObject> checklist;
+    public List<string> checklist;
 
     // Medication Room Data
     public bool medRoom_ChecklistComplete;

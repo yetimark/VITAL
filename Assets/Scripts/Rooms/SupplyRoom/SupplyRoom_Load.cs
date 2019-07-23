@@ -6,10 +6,9 @@ using UnityEngine;
  *  This is the main start-up script for the Supply Room. 
  *  The steps that occur are as follows: 
  *      1. All needed GameObjects are located and assigned to their appropriate variables.
- *      2. Game data is loaded in from the save file.
- *      3. The currLevel and nextLevel are set. This is important for when the player moves into the Score Room 
+ *      2. The currLevel and nextLevel are set. This is important for when the player moves into the Score Room 
  *         (after completing or committing too many mistakes).
- *      4. The selected difficulty's values are assigned.
+ *      3. The selected difficulty's values are assigned.
  *  
  *  ~Written by Austin Winkler
  *  ================================================= */
@@ -45,12 +44,9 @@ public class SupplyRoom_Load : MonoBehaviour
     {
         timerObject = timer.GetComponent<Timer>();
         PD = gameManager.GetComponent<PlayerData>();
-        PD.Load(); // #2
 
         PD.currLevel = "SupplyRoom"; // #3 - The level that the player is currently loading into
         PD.nextLevel = "MedRoom";    // #3 - The level that will come after the current level
-
-        player.transform.position = playerSpawnpoint.transform.position; // Teleports player to center of room
 
         if (PD.difficulty == "Hard") // #4
         {

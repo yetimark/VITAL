@@ -27,7 +27,8 @@ public class AddMeToList : MonoBehaviour
                 if (item.myId == id)
                 {
                     Debug.Log("AddedItem to PiccLine");
-                    //PD.checklist.Add(GameObject.Find(item.getItemName()));
+                    PD.checklist.Add(item.getItemName());
+                    Debug.Log(item.getItemName());
                 }
             }
         }
@@ -37,7 +38,7 @@ public class AddMeToList : MonoBehaviour
             {
                 if (item.myId == id)
                 {
-                    PD.checklist.Add(GameObject.Find(item.getItemName()));
+                    PD.checklist.Add(item.getItemName());
                 }
             }
         }

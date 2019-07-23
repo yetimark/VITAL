@@ -22,7 +22,7 @@ public class PlayerData : MonoBehaviour
 
     // Supply Room Data
     public bool supplyRoom_ChecklistComplete;
-    public List<GameObject> checklist;
+    public List<string> checklist;
 
     // Supply Room Data - NOT SAVED
     public List<int> PiccLine = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
@@ -43,11 +43,11 @@ public class PlayerData : MonoBehaviour
     void Start()
     {
         saveData = new PlayerDataSet();
-        Load();
+        //Load();
     }
 
     // Saves data to file
-    public void Save()
+    /* public void Save()
     {
         // GameStats
         saveData.difficulty = difficulty;
@@ -82,12 +82,13 @@ public class PlayerData : MonoBehaviour
         BinaryFormatter bf = new BinaryFormatter();
         bf.Serialize(file, saveData);
         file.Close();
-    }
+    }*/
 
     //loads data to session
-    public void Load()
+
+    /* public void Load()
     {
-        string destination = Application.persistentDataPath + "/save.dat";
+        string destination = Application.persistentDataPath + "/savefile.dat";
         FileStream file;
 
         if (File.Exists(destination)) file = File.OpenRead(destination);
@@ -125,7 +126,7 @@ public class PlayerData : MonoBehaviour
         supplyRoom_Completion = saveData.supplyRoom_Completion;
         medRoom_Completion = saveData.medRoom_Completion;
         skillsRoom_Completion = saveData.skillsRoom_Completion;
-    }
+    } */
 
 
     //sets default values
@@ -136,15 +137,15 @@ public class PlayerData : MonoBehaviour
         skill = null;
         currLevel = null;
         nextLevel = null;
-        maxStrikes = -1;
+        maxStrikes = 0;
 
         // PlayerStats
-        playerStrikes = -1;
-        playerPoints = -1;
+        playerStrikes = 0;
+        playerPoints = 0;
 
         // Supply Room Data
         supplyRoom_ChecklistComplete = false;
-        checklist = new List<GameObject>();
+        checklist = new List<string>();
 
         // Medication Room Data
         medRoom_ChecklistComplete = false;

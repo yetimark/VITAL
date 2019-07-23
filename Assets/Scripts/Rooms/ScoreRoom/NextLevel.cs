@@ -19,15 +19,12 @@ public class NextLevel : MonoBehaviour
     private GameObject gameManager;
     private PlayerData PD;
 
-    private Text warnPlayer;
     private bool triggerCheck;
 
     public void Awake() // #1
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         PD = gameManager.GetComponent<PlayerData>();
-
-        warnPlayer = GameObject.FindGameObjectWithTag("ScoreUI_WarnPlayer").GetComponent<Text>();
     }
 
     public void OnTriggerEnter(Collider other) // #2
@@ -40,9 +37,7 @@ public class NextLevel : MonoBehaviour
             }
             else
             {
-                warnPlayer.text = "You must successfully complete the previous room before continuing!";
-                new WaitForSeconds(2);
-                warnPlayer.text = "";
+                Debug.Log("You must successfully complete the previous room before continuing!");
             }
         }
     }
