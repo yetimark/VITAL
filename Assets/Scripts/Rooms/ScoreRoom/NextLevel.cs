@@ -35,6 +35,7 @@ public class NextLevel : MonoBehaviour
             {
                 SceneManager.LoadScene("" + PD.nextLevel);
             }
+            // Medroom and all future rooms will need to have if-else cases to check their corresponding completion status
             else
             {
                 Debug.Log("You must successfully complete the previous room before continuing!");
