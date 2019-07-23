@@ -22,6 +22,7 @@ public class SupplyRoom_Load : MonoBehaviour
     private GameObject player;
     private GameObject playerSpawnpoint;
     private GameObject timer;
+    private Timer timerObject; // Throwaway instance of a Timer
 
     private GameObject easyMusic;
     private GameObject mediumMusic;
@@ -42,7 +43,7 @@ public class SupplyRoom_Load : MonoBehaviour
 
     public void Start()
     {
-        Timer timerObject = timer.GetComponent<Timer>();
+        timerObject = timer.GetComponent<Timer>();
         PD = gameManager.GetComponent<PlayerData>();
         PD.Load(); // #2
 

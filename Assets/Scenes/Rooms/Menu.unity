@@ -1016,13 +1016,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.228
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.191
+      value: 1.467
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1302,10 +1306,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficulty: 
   skill: 
+  currLevel: 
+  nextLevel: 
   maxStrikes: 0
   playerStrikes: 0
   playerPoints: 0
   supplyRoom_ChecklistComplete: 0
+  checklist: []
+  PiccLine: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
+  IVInsertion: 0c000000110000001200000015000000
   medRoom_ChecklistComplete: 0
   playerResponses_MedCart: 
   supplyRoom_Completion: 0
@@ -1314,10 +1323,13 @@ MonoBehaviour:
   saveData:
     difficulty: 
     skill: 
+    currLevel: 
+    nextLevel: 
     maxStrikes: 0
     playerStrikes: 0
     playerPoints: 0
     supplyRoom_ChecklistComplete: 0
+    checklist: []
     medRoom_ChecklistComplete: 0
     playerResponses_MedCart: 
     supplyRoom_Completion: 0
@@ -1920,6 +1932,36 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &470155143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 470155144}
+  m_Layer: 0
+  m_Name: GameStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &470155144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470155143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -41.109436, y: 26.342463, z: 51.107533}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &473129398
 GameObject:
   m_ObjectHideFlags: 0

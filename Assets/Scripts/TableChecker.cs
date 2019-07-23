@@ -26,6 +26,12 @@ public class TableChecker : MonoBehaviour
 
     private bool sinkSteps = false;
 
+    public void Awake()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        PD = gameManager.GetComponent<PlayerData>();
+    }
+
     private void Update()
     {
         if (handsRinsed && handsDried && handsSoaped)

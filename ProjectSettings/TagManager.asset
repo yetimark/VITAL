@@ -40,6 +40,13 @@ TagManager:
   - ScoreUI_Retry
   - ScoreUI_NextLevel
   - ScoreUI_WarnPlayer
+  - 1
+  - MedButtonTwo
+  - MedButtonFour
+  - MedButtonThree
+  - MedButtonOne
+  - MediumMusic
+  - HardMusic
   layers:
   - Default
   - TransparentFX

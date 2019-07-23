@@ -22,6 +22,11 @@ public class PlayerData : MonoBehaviour
 
     // Supply Room Data
     public bool supplyRoom_ChecklistComplete;
+    public List<GameObject> checklist;
+
+    // Supply Room Data - NOT SAVED
+    public List<int> PiccLine = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    public List<int> IVInsertion = new List<int> { 12, 17, 18, 21 };
 
     // Medication Room Data
     public bool medRoom_ChecklistComplete;
@@ -57,6 +62,7 @@ public class PlayerData : MonoBehaviour
 
         // Supply Room Data
         saveData.supplyRoom_ChecklistComplete = supplyRoom_ChecklistComplete;
+        saveData.checklist = checklist;
 
         // Medication Room Data
         saveData.medRoom_ChecklistComplete = medRoom_ChecklistComplete;
@@ -109,6 +115,7 @@ public class PlayerData : MonoBehaviour
 
         // Supply Room Data
         supplyRoom_ChecklistComplete = saveData.supplyRoom_ChecklistComplete;
+        checklist = saveData.checklist;
 
         // Medication Room Data
         medRoom_ChecklistComplete = saveData.medRoom_ChecklistComplete;
@@ -137,6 +144,7 @@ public class PlayerData : MonoBehaviour
 
         // Supply Room Data
         supplyRoom_ChecklistComplete = false;
+        checklist = new List<GameObject>();
 
         // Medication Room Data
         medRoom_ChecklistComplete = false;

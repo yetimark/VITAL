@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: YetiMark
+  companyName: VITAL
   productName: VITAL
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -289,8 +289,9 @@ PlayerSettings:
   m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings:
   - m_BuildTarget: Android
-    m_Enabled: 0
+    m_Enabled: 1
     m_Devices:
+    - OpenVR
     - Oculus
   - m_BuildTarget: Metro
     m_Enabled: 0
