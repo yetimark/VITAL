@@ -18,6 +18,6 @@ public class Item : MonoBehaviour
     {                   
         itemName = item.name;
     }
-
+    public int getID() { return myId; }
     public string getItemName() { return itemName; }
 }
