@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* ========= AddMeToList ==========
+ * - This script is attached to every item. On scene-start, a check is performed to assign each 
+ * 
+ * ~Written by Austin Winkler
+ * ======================================*/
+
 public class AddMeToList : MonoBehaviour
 {
     private GameObject gameManager;
