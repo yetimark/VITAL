@@ -47,7 +47,7 @@ public class PlayerData : MonoBehaviour
     }
 
     // Saves data to file
-    /* public void Save()
+    public void Save()
     {
         // GameStats
         saveData.difficulty = difficulty;
@@ -82,11 +82,11 @@ public class PlayerData : MonoBehaviour
         BinaryFormatter bf = new BinaryFormatter();
         bf.Serialize(file, saveData);
         file.Close();
-    }*/
+    }
 
     //loads data to session
 
-    /* public void Load()
+    public void Load()
     {
         string destination = Application.persistentDataPath + "/savefile.dat";
         FileStream file;
@@ -126,7 +126,7 @@ public class PlayerData : MonoBehaviour
         supplyRoom_Completion = saveData.supplyRoom_Completion;
         medRoom_Completion = saveData.medRoom_Completion;
         skillsRoom_Completion = saveData.skillsRoom_Completion;
-    } */
+    } 
 
 
     //sets default values
