@@ -19,11 +19,12 @@ public class NewTableChecker : MonoBehaviour
         {
             foreach (string item in PD.checklist)
             {
-                if (other.GetComponent<Item>.getItemName() == item)
-                {
-
-                    updateCheckboxes();
-                }
+                Debug.Log("Item has been added - NewTableChecker");
+                //if (other.GetComponent<Item>.getItemName() == item)
+                //{
+//
+ //                   updateCheckboxes();
+                //}
             }
         }
     }

@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.vital.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\admin\\Documents\\Github\\VITAL\\actions.json",
+      "action_manifest_path": "C:\\Users\\litma\\OneDrive\\Documents\\GitHub\\VITAL\\actions.json",
       "strings": {
         "en_us": {
           "name": "VITAL [Testing]"
