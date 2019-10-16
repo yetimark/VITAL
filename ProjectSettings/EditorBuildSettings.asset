@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/QuestTest.unity
+    guid: 49d76dd33b0c80a439d8500d56ff2644
+  - enabled: 1
     path: Assets/Scenes/Rooms/Menu.unity
     guid: 66d0c5face64fb740b1b10e40478fe68
   - enabled: 1
