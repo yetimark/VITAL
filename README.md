@@ -1,5 +1,4 @@
 # VITAL
 
-This is a project made by students of Concordia University Wisconsin. It is intended to be a project to give students experience in 
-Virtual Reality Development. The students are making this project for the Nursing Department in hopes that it could be used for 
-extra practive in learning nursing skills.
+This project was made by students of Concordia University Wisconsin. Its intent was to be a way of gaining extended exposure to development within Unity3D in 
+virtual reality development. We made this project for the Nursing Department to give them a way to practive building muscle memory outside of a nursing lab environment, to accellerate students' ability to learning nursing skills.
